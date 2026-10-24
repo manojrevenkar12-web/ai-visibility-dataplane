@@ -139,7 +139,7 @@
   ],
   "reparseAfter": true
  },
- "seconds": 37.413,
+ "seconds": 37.201,
  "workerRestarts": 0,
  "timedOut": false,
  "measures": {
@@ -164,13 +164,6 @@
     "during_outage": 0,
     "ok": 600
    },
-   "anthropic": {
-    "requests": 600,
-    "per_run": 1,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 600
-   },
    "openai": {
     "requests": 600,
     "per_run": 1,
@@ -179,6 +172,13 @@
     "ok": 600
    },
    "perplexity": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "anthropic": {
     "requests": 600,
     "per_run": 1,
     "over_limit_429": 0,
@@ -208,13 +208,13 @@
    "runs_scored": 3000
   },
   "freshness_s": {
-   "p50": 15.7703,
-   "p95": 36.6494,
-   "max": 37.2723
+   "p50": 15.673,
+   "p95": 36.1466,
+   "max": 36.8465
   },
   "webhooks": {
-   "events": 3559,
-   "received_unique": 3559,
+   "events": 3550,
+   "received_unique": 3550,
    "missing": 0,
    "duplicate_deliveries": 0,
    "bad_signatures": 0,
@@ -222,11 +222,11 @@
   },
   "quarantine": {
    "open": 0,
-   "resolved": 559
+   "resolved": 550
   }
  },
  "reparse": {
-  "resolved": 559,
+  "resolved": 550,
   "still_unknown": 0
  }
 }

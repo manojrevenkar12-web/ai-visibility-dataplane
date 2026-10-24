@@ -45,18 +45,21 @@ export class RunStore {
     return r.length === 1;
   }
 
-  async recordCall(
-    runId: string,
-    provider: string,
-    attempt: number,
-    outcome: string,
-    httpStatus: number | null,
-    latencyMs: number,
-    costEur: number,
-  ) {
-    await this.sql`
-      INSERT INTO provider_call(run_id, provider, attempt, outcome, http_status, latency_ms, cost_eur)
-      VALUES (${runId}, ${provider}, ${attempt}, ${outcome}, ${httpStatus}, ${latencyMs}, ${costEur})`;
+  /**
+   * Write-ahead: the call is in the ledger, at its expected cost, before it is made. A worker that
+   * dies after the provider answered but before it recorded anything still leaves the cost behind,
+   * so the ledger can over-count a call that never happened but never under-counts one that did.
+   */
+  async startCall(runId: string, provider: string, attempt: number, expectedEur: number): Promise<number> {
+    const [row] = await this.sql`
+      INSERT INTO provider_call(run_id, provider, attempt, outcome, cost_eur)
+      VALUES (${runId}, ${provider}, ${attempt}, 'started', ${expectedEur}) RETURNING id`;
+    return Number(row.id);
+  }
+
+  async finishCall(callId: number, runId: string, outcome: string, httpStatus: number | null, latencyMs: number, costEur: number) {
+    await this
+      .sql`UPDATE provider_call SET outcome = ${outcome}, http_status = ${httpStatus}, latency_ms = ${latencyMs}, cost_eur = ${costEur} WHERE id = ${callId}`;
     if (costEur > 0) await this.sql`UPDATE run SET cost_eur = cost_eur + ${costEur} WHERE id = ${runId}`;
   }
 

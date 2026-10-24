@@ -42,3 +42,8 @@ describe("brand mentions", () => {
     expect(ids("Kundo, then Taskwise. Kundo again, and Planora.")).toEqual(["ku@1", "tw@2", "pl@3"]);
   });
 });
+
+test("a brand inside a link is not a mention, its link text is", () => {
+  expect(ids("See https://www.taskwise.com/pricing for details.")).toEqual([]);
+  expect(ids("[Planora](https://planora.com/taskwise-vs-planora) is good.")).toEqual(["pl@1"]);
+});

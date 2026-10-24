@@ -150,7 +150,7 @@ export class Worker {
     }
     const wait = await this.circuit.allow(job.provider, cfg.circuit);
     if (wait > 0) return this.defer(l, wait, "circuit_open");
-    const isRetry = l.attempt > 1;
+    const isRetry = l.providerFailures > 0; // only retries caused by the provider spend the retry budget
     if (!(await this.retryBudget.spend(job.provider, isRetry, cfg.retry_budget.ratio, cfg.retry_budget.min_per_second))) {
       m.retriesDeferred.inc({ provider: job.provider });
       return this.defer(l, 500 + backoffMs(l.attempt, cfg.retry.base_ms, cfg.retry.cap_ms), "retry_budget");
@@ -200,6 +200,7 @@ export class Worker {
     holder: string,
     day: string,
   ) {
+    const callId = await this.store.startCall(job.runId, job.provider, l.attempt, cfg.cost_eur);
     const t0 = performance.now();
     try {
       const { answer, raw } = await span("provider.call", { provider: job.provider, run_id: job.runId, attempt: l.attempt }, () =>
@@ -218,7 +219,7 @@ export class Worker {
       await this.budget.settle(job.projectId, day, holder, cfg.cost_eur);
       m.providerCost.inc({ provider: job.provider }, cfg.cost_eur);
       m.circuitState.set({ provider: job.provider }, (await this.circuit.record(job.provider, true, cfg.circuit)) === "open" ? 1 : 0);
-      await this.store.recordCall(job.runId, job.provider, l.attempt, "ok", 200, Math.round(ms), cfg.cost_eur);
+      await this.store.finishCall(callId, job.runId, "ok", 200, Math.round(ms), cfg.cost_eur);
       const analytics = await toAnalytics(job, project, answer, this.opts.fetchImpl);
       const wrote = await this.store.complete(
         job,
@@ -244,7 +245,7 @@ export class Worker {
       await this.budget.settle(job.projectId, day, holder, cost);
       if (cost) m.providerCost.inc({ provider: job.provider }, cost);
       m.providerRequests.inc({ provider: job.provider, outcome: e.kind });
-      await this.store.recordCall(job.runId, job.provider, l.attempt, e.kind, e.status, Math.round(ms), cost);
+      await this.store.finishCall(callId, job.runId, e.kind, e.status, Math.round(ms), cost);
       await this.onError(l, job, cfg, e);
     }
   }
@@ -257,7 +258,7 @@ export class Worker {
         await this.rate.pause(job.provider, Date.now() + pause);
         m.effectiveRate.set({ provider: job.provider }, await this.rate.throttled(job.provider, cfg.rate.per_second));
         log.warn("provider throttled us", { provider: job.provider, retry_after_ms: pause });
-        await this.queue.retry(l, Date.now() + pause + Math.floor(Math.random() * 200));
+        await this.queue.retry(l, Date.now() + pause + Math.floor(Math.random() * 200), true, true);
         return;
       }
       case "unavailable":
@@ -268,7 +269,7 @@ export class Worker {
           return;
         }
         const delay = Math.max(e.retryAfterMs ?? 0, backoffMs(l.attempt, cfg.retry.base_ms, cfg.retry.cap_ms));
-        await this.queue.retry(l, Date.now() + delay);
+        await this.queue.retry(l, Date.now() + delay, true, true);
         return;
       }
       case "schema_drift": {

@@ -149,7 +149,7 @@
    }
   }
  },
- "seconds": 34.488,
+ "seconds": 34.68,
  "workerRestarts": 0,
  "timedOut": false,
  "measures": {
@@ -168,59 +168,59 @@
   },
   "providers": {
    "anthropic": {
+    "requests": 610,
+    "per_run": 1.0167,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 603
+   },
+   "ai_overview": {
+    "requests": 612,
+    "per_run": 1.02,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 606
+   },
+   "gemini": {
     "requests": 614,
     "per_run": 1.0233,
     "over_limit_429": 0,
     "during_outage": 0,
-    "ok": 605
+    "ok": 602
    },
-   "gemini": {
+   "perplexity": {
     "requests": 609,
     "per_run": 1.015,
     "over_limit_429": 0,
     "during_outage": 0,
-    "ok": 602
-   },
-   "ai_overview": {
-    "requests": 607,
-    "per_run": 1.0117,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 604
-   },
-   "perplexity": {
-    "requests": 605,
-    "per_run": 1.0083,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 605
+    "ok": 601
    },
    "openai": {
-    "requests": 613,
-    "per_run": 1.0217,
+    "requests": 607,
+    "per_run": 1.0117,
     "over_limit_429": 0,
     "during_outage": 0,
     "ok": 605
    }
   },
   "cost": {
-   "provider_billed_eur": 28.409,
-   "ledger_eur": 28.413,
+   "provider_billed_eur": 28.375,
+   "ledger_eur": 28.394,
    "max_budget_overrun_eur": 0,
    "projects_over_budget": 0
   },
   "extraction": {
    "mention_precision": 1,
-   "mention_recall": 0.939,
-   "position_exact": 0.8835,
+   "mention_recall": 0.9391,
+   "position_exact": 0.8836,
    "citation_precision": 1,
    "citation_recall": 1,
    "runs_scored": 3000
   },
   "freshness_s": {
-   "p50": 12.0136,
-   "p95": 27.1996,
-   "max": 34.1607
+   "p50": 12.0183,
+   "p95": 26.8261,
+   "max": 34.3085
   },
   "webhooks": {
    "events": 3000,

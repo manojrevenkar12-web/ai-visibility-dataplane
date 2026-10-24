@@ -37,6 +37,7 @@ for _, id in ipairs(ids) do
   table.insert(out, redis.call('HGET', jk, 'payload'))
   table.insert(out, attempts)
   table.insert(out, fence)
+  table.insert(out, tonumber(redis.call('HGET', jk, 'pf') or '0'))
   end
 end
 return out`;
@@ -49,9 +50,10 @@ redis.call('DEL', KEYS[2])
 return 1`;
 
 const RETRY = `
--- KEYS: leased, ready, job ; ARGV: id, fence, at, count_attempt
+-- KEYS: leased, ready, job ; ARGV: id, fence, at, count_attempt, provider_failure
 if redis.call('HGET', KEYS[3], 'fence') ~= ARGV[2] then return 0 end
 if ARGV[4] == '0' then redis.call('HINCRBY', KEYS[3], 'attempts', -1) end
+if ARGV[5] == '1' then redis.call('HINCRBY', KEYS[3], 'pf', 1) end
 redis.call('ZREM', KEYS[1], ARGV[1])
 redis.call('ZADD', KEYS[2], ARGV[3], ARGV[1])
 return 1`;
@@ -84,6 +86,8 @@ export interface Lease<T> {
   payload: T;
   attempt: number;
   fence: number;
+  /** How many earlier attempts failed at the provider (not crashes or lease expiries). */
+  providerFailures: number;
 }
 
 export class Queue<T> {
@@ -116,12 +120,13 @@ export class Queue<T> {
       | number
     )[];
     const out: Lease<T>[] = [];
-    for (let i = 0; i < raw.length; i += 4) {
+    for (let i = 0; i < raw.length; i += 5) {
       out.push({
         id: String(raw[i]),
         payload: JSON.parse(String(raw[i + 1])) as T,
         attempt: Number(raw[i + 2]),
         fence: Number(raw[i + 3]),
+        providerFailures: Number(raw[i + 4]),
       });
     }
     return out;
@@ -132,9 +137,26 @@ export class Queue<T> {
     return (await this.r.eval(ACK, 2, this.k.leased, this.k.job(l.id), l.id, l.fence)) === 1;
   }
 
-  /** Put the job back to run at `at`. `countAttempt: false` for deferrals that were not a try (circuit open, rate limit). */
-  async retry(l: Lease<T>, at: number, countAttempt = true): Promise<boolean> {
-    return (await this.r.eval(RETRY, 3, this.k.leased, this.k.ready, this.k.job(l.id), l.id, l.fence, at, countAttempt ? 1 : 0)) === 1;
+  /**
+   * Put the job back to run at `at`. `countAttempt: false` for deferrals that were not a try (circuit
+   * open, rate limit). `providerFailure` marks a retry caused by the provider failing, which is what
+   * the retry budget limits; re-runs after a crash or an expired lease are not.
+   */
+  async retry(l: Lease<T>, at: number, countAttempt = true, providerFailure = false): Promise<boolean> {
+    return (
+      (await this.r.eval(
+        RETRY,
+        3,
+        this.k.leased,
+        this.k.ready,
+        this.k.job(l.id),
+        l.id,
+        l.fence,
+        at,
+        countAttempt ? 1 : 0,
+        providerFailure ? 1 : 0,
+      )) === 1
+    );
   }
 
   async dead(l: Lease<T>): Promise<boolean> {

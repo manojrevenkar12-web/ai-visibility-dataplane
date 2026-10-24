@@ -42,7 +42,13 @@ function listItem(text: string, i: number): boolean {
   return /^\s*(\d+[.)]|[-*•])\s*(\*\*)?$/.test(text.slice(lineStart, i));
 }
 
-export function findMentions(text: string, brands: BrandRef[], citedDomains: Set<string>): Mention[] {
+/** URLs are blanked (same length, so offsets stay valid): a brand that appears only inside a link is not mentioned. */
+export function blankUrls(text: string): string {
+  return text.replace(/\b(?:https?:\/\/|www\.)[^\s)\]>"']+/gi, (u) => " ".repeat(u.length));
+}
+
+export function findMentions(rawText: string, brands: BrandRef[], citedDomains: Set<string>): Mention[] {
+  const text = blankUrls(rawText);
   const first: { brandId: string; offset: number }[] = [];
   for (const b of brands) {
     let best = -1;

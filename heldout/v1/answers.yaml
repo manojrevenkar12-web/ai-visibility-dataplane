@@ -1,0 +1,2348 @@
+# Held-out set v1: AI-assistant answers with answer key.
+projects:
+  - id: h1
+    category: "Buchhaltungssoftware für Selbstständige und Freelancer"
+    brands:
+      - { id: "h1-b1", name: "sevDesk", aliases: [], domains: ["sevdesk.de", "sevdesk.com"], ambiguous: false }
+      - { id: "h1-b2", name: "Lexware Office", aliases: ["Lexoffice", "Lexware"], domains: ["lexware.de", "lexoffice.de"], ambiguous: false }
+      - { id: "h1-b3", name: "FastBill", aliases: [], domains: ["fastbill.com"], ambiguous: false }
+      - { id: "h1-b4", name: "Accountable", aliases: [], domains: ["accountable.de", "accountable.eu"], ambiguous: true }
+      - { id: "h1-b5", name: "Kontist", aliases: [], domains: ["kontist.com"], ambiguous: false }
+      - { id: "h1-b6", name: "BuchhaltungsButler", aliases: [], domains: ["buchhaltungsbutler.de"], ambiguous: false }
+  - id: h2
+    category: "Project management software for agencies"
+    brands:
+      - { id: "h2-b1", name: "Asana", aliases: [], domains: ["asana.com"], ambiguous: false }
+      - { id: "h2-b2", name: "monday.com", aliases: ["Monday"], domains: ["monday.com"], ambiguous: true }
+      - { id: "h2-b3", name: "Basecamp", aliases: [], domains: ["basecamp.com"], ambiguous: false }
+      - { id: "h2-b4", name: "ClickUp", aliases: [], domains: ["clickup.com"], ambiguous: false }
+      - { id: "h2-b5", name: "Notion", aliases: [], domains: ["notion.so", "notion.com"], ambiguous: true }
+      - { id: "h2-b6", name: "Teamwork.com", aliases: ["Teamwork"], domains: ["teamwork.com"], ambiguous: true }
+      - { id: "h2-b7", name: "Wrike", aliases: [], domains: ["wrike.com"], ambiguous: false }
+  - id: h3
+    category: "E-Bikes für Pendler"
+    brands:
+      - { id: "h3-b1", name: "Riese & Müller", aliases: ["Riese und Müller", "R&M"], domains: ["r-m.de"], ambiguous: false }
+      - { id: "h3-b2", name: "VanMoof", aliases: [], domains: ["vanmoof.com"], ambiguous: false }
+      - { id: "h3-b3", name: "Cube", aliases: ["Cube Bikes"], domains: ["cube.eu"], ambiguous: true }
+      - { id: "h3-b4", name: "Gazelle", aliases: [], domains: ["gazelle.de", "gazellebikes.com"], ambiguous: true }
+      - { id: "h3-b5", name: "Stromer", aliases: [], domains: ["stromerbike.com"], ambiguous: false }
+      - { id: "h3-b6", name: "Haibike", aliases: [], domains: ["haibike.com"], ambiguous: false }
+      - { id: "h3-b7", name: "Kalkhoff", aliases: [], domains: ["kalkhoff-bikes.com"], ambiguous: false }
+  - id: h4
+    category: "Password managers"
+    brands:
+      - { id: "h4-b1", name: "1Password", aliases: [], domains: ["1password.com"], ambiguous: false }
+      - { id: "h4-b2", name: "Bitwarden", aliases: [], domains: ["bitwarden.com"], ambiguous: false }
+      - { id: "h4-b3", name: "Dashlane", aliases: [], domains: ["dashlane.com"], ambiguous: false }
+      - { id: "h4-b4", name: "Keeper", aliases: ["Keeper Security"], domains: ["keepersecurity.com", "keeper.io"], ambiguous: true }
+      - { id: "h4-b5", name: "NordPass", aliases: [], domains: ["nordpass.com"], ambiguous: false }
+      - { id: "h4-b6", name: "Proton Pass", aliases: [], domains: ["proton.me"], ambiguous: false }
+  - id: h5
+    category: "Ökostromanbieter in Deutschland"
+    brands:
+      - { id: "h5-b1", name: "LichtBlick", aliases: [], domains: ["lichtblick.de"], ambiguous: true }
+      - { id: "h5-b2", name: "Naturstrom", aliases: [], domains: ["naturstrom.de"], ambiguous: false }
+      - { id: "h5-b3", name: "Tibber", aliases: [], domains: ["tibber.com"], ambiguous: false }
+      - { id: "h5-b4", name: "EWS Schönau", aliases: ["EWS", "Elektrizitätswerke Schönau"], domains: ["ews-schoenau.de"], ambiguous: false }
+      - { id: "h5-b5", name: "Polarstern", aliases: [], domains: ["polarstern-energie.de"], ambiguous: true }
+      - { id: "h5-b6", name: "Octopus Energy", aliases: ["Octopus"], domains: ["octopusenergy.de", "octopus.energy"], ambiguous: true }
+      - { id: "h5-b7", name: "E.ON", aliases: ["EON", "Eon"], domains: ["eon.de"], ambiguous: false }
+  - id: h6
+    category: "Running shoes"
+    brands:
+      - { id: "h6-b1", name: "Brooks", aliases: ["Brooks Running"], domains: ["brooksrunning.com"], ambiguous: true }
+      - { id: "h6-b2", name: "On", aliases: ["On Running"], domains: ["on.com", "on-running.com"], ambiguous: true }
+      - { id: "h6-b3", name: "Hoka", aliases: ["HOKA", "Hoka One One"], domains: ["hoka.com"], ambiguous: false }
+      - { id: "h6-b4", name: "Asics", aliases: ["ASICS"], domains: ["asics.com"], ambiguous: false }
+      - { id: "h6-b5", name: "Saucony", aliases: [], domains: ["saucony.com"], ambiguous: false }
+      - { id: "h6-b6", name: "New Balance", aliases: ["NB"], domains: ["newbalance.com"], ambiguous: false }
+      - { id: "h6-b7", name: "Mizuno", aliases: [], domains: ["mizuno.com"], ambiguous: false }
+  - id: h7
+    category: "Online-Banken und kostenloses Girokonto"
+    brands:
+      - { id: "h7-b1", name: "N26", aliases: [], domains: ["n26.com"], ambiguous: false }
+      - { id: "h7-b2", name: "DKB", aliases: ["Deutsche Kreditbank"], domains: ["dkb.de"], ambiguous: false }
+      - { id: "h7-b3", name: "ING", aliases: ["ING-DiBa", "ING Deutschland"], domains: ["ing.de"], ambiguous: false }
+      - { id: "h7-b4", name: "comdirect", aliases: [], domains: ["comdirect.de"], ambiguous: false }
+      - { id: "h7-b5", name: "C24", aliases: ["C24 Bank"], domains: ["c24.de"], ambiguous: false }
+      - { id: "h7-b6", name: "Trade Republic", aliases: [], domains: ["traderepublic.com"], ambiguous: false }
+      - { id: "h7-b7", name: "Tomorrow", aliases: ["Tomorrow Bank"], domains: ["tomorrow.one"], ambiguous: true }
+      - { id: "h7-b8", name: "Vivid", aliases: ["Vivid Money"], domains: ["vivid.money"], ambiguous: true }
+  - id: h8
+    category: "CRM software for small businesses"
+    brands:
+      - { id: "h8-b1", name: "HubSpot", aliases: [], domains: ["hubspot.com", "hubspot.de"], ambiguous: false }
+      - { id: "h8-b2", name: "Pipedrive", aliases: [], domains: ["pipedrive.com"], ambiguous: false }
+      - { id: "h8-b3", name: "Salesforce", aliases: [], domains: ["salesforce.com"], ambiguous: false }
+      - { id: "h8-b4", name: "Zoho CRM", aliases: ["Zoho"], domains: ["zoho.com"], ambiguous: false }
+      - { id: "h8-b5", name: "Freshsales", aliases: ["Freshworks CRM", "Freshworks"], domains: ["freshworks.com"], ambiguous: false }
+      - { id: "h8-b6", name: "Copper", aliases: ["Copper CRM"], domains: ["copper.com"], ambiguous: true }
+      - { id: "h8-b7", name: "Close", aliases: ["Close CRM", "Close.com"], domains: ["close.com"], ambiguous: true }
+answers:
+  - id: a001
+    project: h1
+    provider: chatgpt
+    language: de
+    text: |
+      Für Freelancer in Deutschland sind vor allem diese Tools beliebt:
+
+      1. **sevDesk** – sehr umfangreich, mit Belegerfassung per App, Bankanbindung und ELSTER-Übermittlung der Umsatzsteuervoranmeldung.
+      2. **Lexoffice** (heute *Lexware Office*) – besonders einsteigerfreundlich, gute Rechnungsvorlagen und automatische Zuordnung von Zahlungen.
+      3. **BuchhaltungsButler** – stark bei der automatischen Belegzuordnung, eher für Selbstständige mit vielen Transaktionen.
+      4. **Kontist** – Geschäftskonto mit integrierter Steuerschätzung; praktisch, wenn du Konto und Buchhaltung kombinieren willst.
+
+      **Mein Tipp:** Wenn du nur Rechnungen schreibst und eine EÜR machst, reicht meist der Einstiegstarif von Lexware Office oder sevDesk. Beide lassen sich kostenlos testen.
+    citations:
+      - "https://sevdesk.de/?utm_source=chatgpt.com"
+      - "https://www.lexware.de/lexoffice/?utm_source=chatgpt.com"
+      - "https://www.buchhaltungsbutler.de/preise/?utm_source=chatgpt.com"
+    key:
+      mentioned: [h1-b1, h1-b2, h1-b6, h1-b5]
+      pages:
+        - "https://sevdesk.de"
+        - "https://lexware.de/lexoffice"
+        - "https://buchhaltungsbutler.de/preise"
+  - id: a002
+    project: h1
+    provider: claude
+    language: de
+    text: |
+      Das hängt stark davon ab, wie viele Rechnungen du im Monat schreibst und ob du umsatzsteuerpflichtig bist.
+
+      Als Kleinunternehmer nach § 19 UStG brauchst du im Grunde nur saubere Rechnungen, ein Belegarchiv und am Jahresende die EÜR. Dafür ist Lexware Office ein sehr solider Einstieg: Die Oberfläche ist aufgeräumt, und die Belegerfassung per Smartphone funktioniert zuverlässig.
+
+      FastBill würde ich dir in deiner Situation eher nicht empfehlen. Das Tool ist stark auf Rechnungsstellung ausgerichtet, und für die eigentliche Buchhaltung bräuchtest du dann zusätzlich eine zweite Lösung oder deinen Steuerberater.
+
+      Wenn du bereits mit einem Steuerberater arbeitest, frag ihn am besten vorher, welches Programm er per DATEV-Export am liebsten bekommt – das spart später viel Ärger.
+    citations: []
+    key:
+      mentioned: [h1-b2, h1-b3]
+      pages: []
+  - id: a003
+    project: h1
+    provider: perplexity
+    language: en
+    text: |
+      If you want software that keeps you accountable for every receipt and invoice, the main German options for freelancers are sevDesk, Lexoffice and Accountable [1][2].
+
+      | Tool | Best for | Starting price | ELSTER filing |
+      |---|---|---|---|
+      | sevDesk | All-round bookkeeping | low monthly fee | Yes |
+      | Lexoffice | Beginners | low monthly fee | Yes |
+      | Accountable | Freelancers who want tax filing in-app | free tier available | Yes |
+      | Kontist | Bank account + tax estimate | bundled with account | Partly |
+
+      sevDesk and Lexoffice are the most widely used, while Accountable focuses on doing the VAT return and income tax prep inside a mobile app [3].
+    citations:
+      - "https://www.sevdesk.de/preise/"
+      - "https://www.lexware.de/lexoffice/preise/"
+      - "https://www.accountable.de/en/"
+    key:
+      mentioned: [h1-b1, h1-b2, h1-b4, h1-b5]
+      pages:
+        - "https://sevdesk.de/preise"
+        - "https://lexware.de/lexoffice/preise"
+        - "https://accountable.de/en"
+  - id: a004
+    project: h1
+    provider: gemini
+    language: de
+    text: |
+      ## Die besten Buchhaltungs-Apps für Freelancer
+
+      Hier sind die wichtigsten Optionen, je nachdem, worauf du Wert legst:
+
+      * **Für maximale Automatisierung:** BuchhaltungsButler ordnet Belege und Kontobewegungen mit KI-Unterstützung zu.
+      * **Für die Steuer direkt in der App:** Accountable. Accountable richtet sich speziell an Freiberufler und erstellt Umsatzsteuervoranmeldung und Steuererklärung aus deinen Buchungen.
+      * **Für Einsteiger:** Lexware Office – übersichtlich und mit vielen Vorlagen.
+
+      **Fazit:** Wer vor allem mobil arbeitet, ist mit Accountable gut bedient; wer viele Belege hat, sollte sich BuchhaltungsButler ansehen.
+    citations:
+      - "https://www.accountable.de/"
+      - "https://accountable.de"
+      - "https://www.buchhaltungsbutler.de/funktionen/#belegerfassung"
+    key:
+      mentioned: [h1-b6, h1-b4, h1-b2]
+      pages:
+        - "https://accountable.de"
+        - "https://buchhaltungsbutler.de/funktionen"
+  - id: a005
+    project: h1
+    provider: ai_overview
+    language: de
+    text: |
+      Eine Buchhaltungssoftware für Freelancer sollte **GoBD-konform** sein, Rechnungen nach den Vorgaben des § 14 UStG erstellen und die **Umsatzsteuervoranmeldung über ELSTER** übermitteln können. Wichtig sind außerdem:
+
+      - automatischer Abgleich mit dem Geschäftskonto
+      - Belegerfassung per Foto
+      - Export für den Steuerberater (DATEV-Format)
+      - E-Rechnungen im XRechnung- oder ZUGFeRD-Format
+
+      Seit 2025 müssen Unternehmen E-Rechnungen empfangen können; viele Programme haben das bereits integriert.
+    citations:
+      - "https://www.sevdesk.de/ratgeber/buchhaltung/gobd/?srsltid=AfmBOoq3xT7"
+      - "https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html"
+      - "https://www.lexware.de/wissen/buchhaltung-finanzen/e-rechnung/"
+    key:
+      mentioned: []
+      pages:
+        - "https://sevdesk.de/ratgeber/buchhaltung/gobd"
+        - "https://bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html"
+        - "https://lexware.de/wissen/buchhaltung-finanzen/e-rechnung"
+  - id: a006
+    project: h1
+    provider: chatgpt
+    language: de
+    text: |
+      Kurz gesagt: Für die meisten Solo-Selbstständigen ist Lexoffice der einfachste Einstieg.
+
+      | | Lexoffice | sevDesk | BuchhaltungsButler |
+      |---|---|---|---|
+      | Einstieg | sehr leicht | mittel | mittel |
+      | Belegerkennung | gut | gut | sehr gut |
+      | Bankanbindung | ja | ja | ja |
+      | Lohnabrechnung | optional | optional | über Partner |
+
+      Wenn du später Mitarbeitende einstellst, lohnt sich ein Tarif mit Lohnmodul. Für reine Rechnungsstellung reicht der kleinste Tarif.
+    citations:
+      - "https://www.lexware.de/lexoffice/?utm_source=chatgpt.com&utm_medium=referral"
+      - "https://sevdesk.de/funktionen/"
+    key:
+      mentioned: [h1-b2, h1-b1, h1-b6]
+      pages:
+        - "https://lexware.de/lexoffice"
+        - "https://sevdesk.de/funktionen"
+  - id: a007
+    project: h1
+    provider: claude
+    language: en
+    text: |
+      Accountable is probably the closest fit for what you describe. It was built for freelancers in Germany and Belgium, and it walks you through the VAT return in plain English, which helps if your German is still basic.
+
+      That said, no app makes you accountable to the tax office on its own — you still need to keep receipts and file on time. If you prefer a classic web interface, sevDesk's dashboard is more powerful, and Lexoffice's invoice templates are the easiest to set up.
+
+      Whichever you choose, connect your business bank account on day one. Matching payments months later is the part everyone hates.
+    citations: []
+    key:
+      mentioned: [h1-b4, h1-b1, h1-b2]
+      pages: []
+  - id: a008
+    project: h1
+    provider: perplexity
+    language: de
+    text: |
+      Für Freiberufler mit einem separaten Geschäftskonto gibt es zwei Wege: ein Konto mit integrierter Buchhaltung oder eine eigenständige Software [1].
+
+      **Eigenständige Software:** sevDesk und BuchhaltungsButler lassen sich mit nahezu jeder deutschen Bank verbinden [2][3].
+
+      **Konto mit Buchhaltung:** Kontist wurde früher oft empfohlen, ist laut Erfahrungsberichten für Freiberufler mit vielen Ausgaben aber weniger geeignet, da die Kategorisierung eingeschränkt ist. Von Kontist als alleiniger Lösung raten viele Steuerberater daher ab [4].
+    citations:
+      - "https://m.gruenderszene.de/business/buchhaltungssoftware-vergleich"
+      - "https://www.sevdesk.de/funktionen/bankanbindung/#banken"
+      - "https://buchhaltungsbutler.de/funktionen/bankanbindung/"
+      - "https://www.reddit.com/r/Finanzen/comments/1abc2de/kontist_erfahrungen/"
+    key:
+      mentioned: [h1-b1, h1-b6, h1-b5]
+      pages:
+        - "https://gruenderszene.de/business/buchhaltungssoftware-vergleich"
+        - "https://sevdesk.de/funktionen/bankanbindung"
+        - "https://buchhaltungsbutler.de/funktionen/bankanbindung"
+        - "https://reddit.com/r/Finanzen/comments/1abc2de/kontist_erfahrungen"
+  - id: a009
+    project: h1
+    provider: gemini
+    language: de
+    text: |
+      Hier meine Kurzliste ✨
+
+      ✅ sevdesk – Allrounder, gute App
+      ✅ lexoffice – super für Einsteiger*innen
+      ✅ fastbill – wenn du vor allem Rechnungen und Angebote schreibst
+      ⚠️ Für Anlagevermögen und Abschreibungen schau dir die größeren Tarife an.
+
+      Alle drei bieten eine kostenlose Testphase, also probier sie einfach nacheinander aus!
+    citations:
+      - "https://sevdesk.de/"
+      - "https://www.lexware.de/lexoffice/"
+      - "https://www.fastbill.com/"
+    key:
+      mentioned: [h1-b1, h1-b2, h1-b3]
+      pages:
+        - "https://sevdesk.de"
+        - "https://lexware.de/lexoffice"
+        - "https://fastbill.com"
+  - id: a010
+    project: h1
+    provider: ai_overview
+    language: de
+    text: |
+      **Lexware Office** (ehemals Lexoffice) und **sevDesk** gelten als die meistgenutzten Buchhaltungsprogramme für Selbstständige in Deutschland. Beide bieten Rechnungsstellung, Belegerfassung, Bankabgleich und eine ELSTER-Schnittstelle. sevDesk punktet mit umfangreicheren Funktionen, Lexware Office mit einfacher Bedienung.
+    citations:
+      - "https://www.lexware.de/lexoffice/"
+      - "https://www.lexware.de/lexoffice/?gclid=Cj0KCQjw9fqnBhDS"
+      - "https://www.sevdesk.de/vergleich/lexoffice-alternative/#fazit"
+    key:
+      mentioned: [h1-b2, h1-b1]
+      pages:
+        - "https://lexware.de/lexoffice"
+        - "https://sevdesk.de/vergleich/lexoffice-alternative"
+  - id: a011
+    project: h1
+    provider: chatgpt
+    language: de
+    text: |
+      Bevor du dich für ein Programm entscheidest, kläre drei Fragen:
+
+      1. **Bist du Kleinunternehmer?** Dann brauchst du keine Umsatzsteuervoranmeldung, und ein einfaches Rechnungstool reicht oft.
+      2. **Bilanzierst du oder machst du eine EÜR?** Fast alle Freelancer-Tools sind auf die Einnahmenüberschussrechnung ausgelegt. Für eine Bilanz brauchst du in der Regel eine Steuerkanzlei.
+      3. **Arbeitest du mit einem Steuerberater?** Dann achte auf einen DATEV-Export oder einen direkten Zugang für die Kanzlei.
+
+      Danach kannst du gezielt zwei oder drei Anbieter testen. Viele bieten 14 bis 30 Tage kostenlos an.
+    citations:
+      - "https://www.ihk.de/existenzgruendung/buchfuehrung?utm_source=chatgpt.com"
+    key:
+      mentioned: []
+      pages:
+        - "https://ihk.de/existenzgruendung/buchfuehrung"
+  - id: a012
+    project: h1
+    provider: claude
+    language: en
+    text: |
+      For a freelance designer billing mostly German clients, I'd start with sevDesk. It handles invoices, receipts and the advance VAT return in one place, and the mobile app is good enough for snapping receipts on the go.
+
+      There's a fairly balanced write-up of invoicing requirements at https://www.fastbill.com/blog/rechnung-schreiben-freiberufler/ if you want to understand which fields German invoices need — it's useful even if you end up using a different tool.
+
+      One caution: whatever you choose, check that it can receive e-invoices (XRechnung/ZUGFeRD), since that has been mandatory for B2B recipients since 2025.
+    citations:
+      - "https://www.fastbill.com/blog/rechnung-schreiben-freiberufler/"
+    key:
+      mentioned: [h1-b1]
+      pages:
+        - "https://fastbill.com/blog/rechnung-schreiben-freiberufler"
+  - id: a013
+    project: h1
+    provider: perplexity
+    language: de
+    text: |
+      Im direkten Vergleich zwischen BuchhaltungsButler und sevDesk zeigt sich [1][2]:
+
+      - **Automatisierung:** Die Stärke des BuchhaltungsButlers ist die automatische Zuordnung von Belegen zu Kontobewegungen.
+      - **Funktionsumfang:** sevDesks Angebot ist breiter, inklusive Angeboten, Mahnwesen und Lohnmodul.
+      - **Preis:** Beide liegen in einem ähnlichen Bereich; sevDesk hat einen günstigeren Einstiegstarif [3].
+
+      Für Freiberufler mit vielen Kleinbelegen (z. B. Fotografen, Handwerker) ist der BuchhaltungsButler oft die bessere Wahl.
+    citations:
+      - "https://www.buchhaltungsbutler.de/vergleich/sevdesk/"
+      - "https://www.sevdesk.de/funktionen/?utm_source=perplexity"
+      - "https://www.sevdesk.de/preise"
+    key:
+      mentioned: [h1-b6, h1-b1]
+      pages:
+        - "https://buchhaltungsbutler.de/vergleich/sevdesk"
+        - "https://sevdesk.de/funktionen"
+        - "https://sevdesk.de/preise"
+  - id: a014
+    project: h1
+    provider: gemini
+    language: de
+    text: |
+      Hier eine Übersicht der gängigen Lösungen:
+
+      | Anbieter | Zielgruppe | Mobile App | Steuererklärung |
+      |---|---|---|---|
+      | sevDesk | Selbstständige & kleine Firmen | ja | nein (nur UStVA) |
+      | Lexware Office | Einsteiger, Kleinunternehmen | ja | nein (nur UStVA) |
+      | Accountable | Freiberufler | ja | ja |
+      | FastBill | Rechnungsstellung | ja | nein |
+      | Kontist | Freelancer mit Geschäftskonto | ja | eingeschränkt |
+      | BuchhaltungsButler | belegintensive Betriebe | ja | nein |
+
+      **Hinweis:** Die Funktionen ändern sich häufig – prüfe die aktuellen Tarife direkt beim Anbieter.
+    citations:
+      - "https://www.accountable.de/funktionen/"
+      - "https://www.kontist.com/de/"
+    key:
+      mentioned: [h1-b1, h1-b2, h1-b4, h1-b3, h1-b5, h1-b6]
+      pages:
+        - "https://accountable.de/funktionen"
+        - "https://kontist.com/de"
+  - id: a015
+    project: h1
+    provider: ai_overview
+    language: en
+    text: |
+      Popular accounting tools for freelancers in Germany include **sevDesk**, **Lexoffice** (now Lexware Office) and **Accountable**. They support GoBD-compliant bookkeeping, invoice creation and submitting VAT returns via ELSTER. Accountable also offers an English interface, which makes it popular with international freelancers.
+    citations:
+      - "https://www.accountable.de/en/"
+      - "https://www.accountable.de/en/#pricing"
+      - "https://www.sevdesk.de/?ref=ai"
+      - "https://www.toytown-germany.com/forum/topic/412345-accounting-software-for-freelancers/"
+    key:
+      mentioned: [h1-b1, h1-b2, h1-b4]
+      pages:
+        - "https://accountable.de/en"
+        - "https://sevdesk.de"
+        - "https://toytown-germany.com/forum/topic/412345-accounting-software-for-freelancers"
+  - id: a016
+    project: h2
+    provider: chatgpt
+    language: en
+    text: |
+      Here are solid options for a 10–20 person creative agency:
+
+      1. **Asana** – great for task dependencies and client-facing project timelines.
+      2. **monday.com** – very visual boards, easy for non-technical teammates.
+      3. **ClickUp** – huge feature set (docs, whiteboards, time tracking) at a low price.
+      4. **Teamwork.com** – built specifically for agencies, with billable hours and client permissions.
+
+      Notion is worth a look too if your team lives in docs, but it's weaker on resource planning.
+
+      If billing clients by the hour is central, I'd shortlist Teamwork.com and ClickUp first.
+    citations:
+      - "https://asana.com/uses/agency-project-management?utm_source=chatgpt.com"
+      - "https://www.teamwork.com/agency-project-management-software/?utm_source=chatgpt.com"
+    key:
+      mentioned: [h2-b1, h2-b2, h2-b4, h2-b6, h2-b5]
+      pages:
+        - "https://asana.com/uses/agency-project-management"
+        - "https://teamwork.com/agency-project-management-software"
+  - id: a017
+    project: h2
+    provider: claude
+    language: de
+    text: |
+      Für eine Agentur mit vielen parallelen Kundenprojekten würde ich mir zuerst Teamwork.com ansehen. Das Tool ist von Grund auf für Agenturen gebaut: Zeiterfassung, Budgets pro Projekt und ein Kundenzugang sind direkt dabei.
+
+      Allerdings ersetzt keine Software gutes Teamwork – wenn Zuständigkeiten unklar sind, hilft auch das schönste Board nicht.
+
+      Als Alternative käme Wrike infrage, das bei größeren Teams mit Freigabeprozessen stark ist. Basecamp ist deutlich einfacher, bietet aber kaum Ressourcenplanung.
+    citations: []
+    key:
+      mentioned: [h2-b6, h2-b7, h2-b3]
+      pages: []
+  - id: a018
+    project: h2
+    provider: perplexity
+    language: en
+    text: |
+      For agencies, the most frequently recommended tools in 2026 are Asana, ClickUp and monday.com [1][2]. Agency-specific features such as time tracking, client portals and retainer budgets vary considerably [3].
+
+      | Feature | Asana | ClickUp | monday.com | Wrike | Basecamp |
+      |---|---|---|---|---|---|
+      | Native time tracking | Paid tiers | Yes | Yes | Yes | Yes |
+      | Client guest access | Yes | Yes | Yes | Yes | Yes |
+      | Gantt / timeline | Yes | Yes | Yes | Yes | Limited |
+      | Flat pricing | No | No | No | No | Yes |
+
+      Most agencies end up choosing based on how many external collaborators they need to invite [3].
+    citations:
+      - "https://www.g2.com/categories/project-management"
+      - "https://zapier.com/blog/best-project-management-software/"
+      - "https://www.forbes.com/advisor/business/software/best-project-management-software/amp/"
+    key:
+      mentioned: [h2-b1, h2-b4, h2-b2, h2-b7, h2-b3]
+      pages:
+        - "https://g2.com/categories/project-management"
+        - "https://zapier.com/blog/best-project-management-software"
+        - "https://forbes.com/advisor/business/software/best-project-management-software/amp"
+  - id: a019
+    project: h2
+    provider: gemini
+    language: en
+    text: |
+      **Short answer:** If your agency starts every week with a Monday status meeting, monday.com's dashboards can replace most of that meeting.
+
+      ### Why it fits agencies
+      * **Client boards:** share a read-only view with each client.
+      * **Automations:** move items when a status changes, notify account managers.
+      * **Time tracking column:** log billable hours directly on tasks.
+
+      ### Alternatives
+      * **Asana** if you need stronger portfolio reporting.
+      * **Wrike** if you work with complex approval workflows (e.g., ad creatives).
+    citations:
+      - "https://monday.com/lp/agencies/"
+      - "https://www.monday.com/lp/agencies?utm_campaign=gemini"
+      - "https://www.wrike.com/features/proofing-approval/"
+    key:
+      mentioned: [h2-b2, h2-b1, h2-b7]
+      pages:
+        - "https://monday.com/lp/agencies"
+        - "https://wrike.com/features/proofing-approval"
+  - id: a020
+    project: h2
+    provider: ai_overview
+    language: en
+    text: |
+      The best project management software for agencies includes **Teamwork.com**, which offers built-in time tracking, profitability reports and client permissions, as well as **ClickUp** and **Asana**. Agencies should prioritize resource planning, budget tracking and client collaboration features when choosing a tool.
+    citations:
+      - "https://www.teamwork.com/"
+      - "https://teamwork.com/blog/best-agency-project-management-software/"
+      - "https://www.reddit.com/r/agency/comments/18x9k2p/what_pm_tool_does_your_agency_use/"
+    key:
+      mentioned: [h2-b6, h2-b4, h2-b1]
+      pages:
+        - "https://teamwork.com"
+        - "https://teamwork.com/blog/best-agency-project-management-software"
+        - "https://reddit.com/r/agency/comments/18x9k2p/what_pm_tool_does_your_agency_use"
+  - id: a021
+    project: h2
+    provider: chatgpt
+    language: de
+    text: |
+      Für deine Agentur mit 8 Leuten würde ich so vorgehen:
+
+      **Empfehlung: Asana.** Die Lernkurve ist flach, Kundenprojekte lassen sich gut als Vorlagen anlegen, und die Zeitleiste eignet sich gut für Kundenpräsentationen.
+
+      **Eher nicht: ClickUp.** Funktional ist es stark, aber viele kleine Teams verlieren sich in den unzähligen Einstellungen. Für dein Team wäre ClickUp wahrscheinlich überdimensioniert.
+
+      **Optional: Basecamp**, falls dir Einfachheit wichtiger ist als Berichte.
+    citations:
+      - "https://asana.com/de/templates/agency?utm_source=chatgpt.com"
+    key:
+      mentioned: [h2-b1, h2-b4, h2-b3]
+      pages:
+        - "https://asana.com/de/templates/agency"
+  - id: a022
+    project: h2
+    provider: claude
+    language: en
+    text: |
+      Notion can work as a project management tool for an agency, but it depends on what you mean by "project management." If the notion you have in mind is a shared wiki plus a simple kanban board, it's excellent. If you need workload views, time tracking and budgets per client, you'll be fighting it.
+
+      A common setup I see in small agencies is Notion for docs and briefs, paired with a dedicated tool like Asana or Teamwork.com for delivery. That split keeps briefs readable while still giving project managers proper timelines.
+    citations: []
+    key:
+      mentioned: [h2-b5, h2-b1, h2-b6]
+      pages: []
+  - id: a023
+    project: h2
+    provider: perplexity
+    language: en
+    text: |
+      Teamwork.com and Wrike are both used by mid-sized agencies, but they target different needs [1].
+
+      **Teamwork.com** focuses on client work: billable time, retainers and profitability per project [2]. Teamwork between account and creative staff is supported through proofing and client approvals.
+
+      **Wrike** is stronger for large marketing teams with many parallel campaigns and custom workflows [3].
+
+      Pricing for both is per user, with agency features in the higher tiers [2][3].
+    citations:
+      - "https://www.capterra.com/compare/134512-120936/Teamwork-vs-Wrike"
+      - "https://www.teamwork.com/pricing/#agency"
+      - "https://www.wrike.com/price/"
+    key:
+      mentioned: [h2-b6, h2-b7]
+      pages:
+        - "https://capterra.com/compare/134512-120936/Teamwork-vs-Wrike"
+        - "https://teamwork.com/pricing"
+        - "https://wrike.com/price"
+  - id: a024
+    project: h2
+    provider: gemini
+    language: de
+    text: |
+      Für Agenturen, die Kundenprojekte mit festen Budgets abwickeln, sind diese Funktionen entscheidend:
+
+      * **Ressourcenplanung:** Wer hat diese Woche noch Kapazität?
+      * **Zeiterfassung pro Aufgabe:** Grundlage für die Abrechnung.
+      * **Gastzugänge für Kunden:** Freigaben ohne E-Mail-Pingpong.
+
+      Asana und monday.com decken alle drei Punkte in den Business-Tarifen ab. Eine ausführliche Checkliste findest du [hier](https://clickup.com/de/blog/agentur-projektmanagement/).
+    citations:
+      - "https://clickup.com/de/blog/agentur-projektmanagement/"
+      - "https://asana.com/de/pricing"
+    key:
+      mentioned: [h2-b1, h2-b2]
+      pages:
+        - "https://clickup.com/de/blog/agentur-projektmanagement"
+        - "https://asana.com/de/pricing"
+  - id: a025
+    project: h2
+    provider: ai_overview
+    language: en
+    text: |
+      Agency project management software typically combines **task management**, **time tracking**, **resource scheduling** and **client collaboration**. Key features to compare include:
+      - Billable vs. non-billable hours
+      - Retainer and budget tracking
+      - Client portals or guest access
+      - Integrations with invoicing and CRM tools
+
+      Many tools offer free trials, so agencies often pilot two options with one client project before committing.
+    citations:
+      - "https://www.notion.so/templates/agency-project-management"
+      - "https://www.atlassian.com/agile/project-management"
+    key:
+      mentioned: []
+      pages:
+        - "https://notion.so/templates/agency-project-management"
+        - "https://atlassian.com/agile/project-management"
+  - id: a026
+    project: h2
+    provider: chatgpt
+    language: en
+    text: |
+      Quick take 👇
+
+      - 🟢 **clickup** — cheapest way to get time tracking + docs + tasks in one place
+      - 🟢 **asana** — cleanest UI, clients actually enjoy using it
+      - 🟡 **basecamp** — flat price, simple, but light on reporting
+      - 🔴 **Monday** — beautiful, but the seat-bundle pricing gets expensive for agencies with lots of freelancers
+
+      Honestly, for a 6-person agency I'd start with ClickUp's free plan and upgrade once you hit the limits.
+    citations: []
+    key:
+      mentioned: [h2-b4, h2-b1, h2-b3, h2-b2]
+      pages: []
+  - id: a027
+    project: h2
+    provider: claude
+    language: en
+    text: |
+      Between the two, I'd lean towards Wrike for your situation. You mentioned a 40-person team, three offices, and a formal approval chain for every deliverable — that's exactly where Wrike's custom request forms and proofing tools pay off.
+
+      Asana's strengths are simplicity and adoption. People actually update their tasks in Asana, which matters more than any feature list. But its approval flows are lighter, and you'd likely need an add-on for proofing.
+
+      If budget is tight, run a two-week trial of each with one real campaign rather than a demo project.
+    citations: []
+    key:
+      mentioned: [h2-b7, h2-b1]
+      pages: []
+  - id: a028
+    project: h2
+    provider: perplexity
+    language: de
+    text: |
+      Für eine Agentur mit festen Retainer-Budgets eignen sich laut aktuellen Vergleichen vor allem Teamwork.com und Wrike [1][2].
+
+      Notion wird zwar häufig genannt, ist für die Projektsteuerung in Agenturen aber nicht zu empfehlen: Es fehlen native Zeiterfassung und Auslastungsplanung [3]. Viele Agenturen nutzen Notion daher nur als Wiki.
+
+      Wrikes Stärke liegt in komplexen Freigabeprozessen, während Teamwork vor allem bei der Profitabilität pro Kunde punktet [1].
+    citations:
+      - "https://omr.com/de/reviews/category/projektmanagement"
+      - "https://t3n.de/news/projektmanagement-tools-agenturen-vergleich-1612345/amp/"
+      - "https://www.notion.com/de/help/guides/notion-for-agencies"
+    key:
+      mentioned: [h2-b6, h2-b7, h2-b5]
+      pages:
+        - "https://omr.com/de/reviews/category/projektmanagement"
+        - "https://t3n.de/news/projektmanagement-tools-agenturen-vergleich-1612345/amp"
+        - "https://notion.com/de/help/guides/notion-for-agencies"
+  - id: a029
+    project: h2
+    provider: gemini
+    language: de
+    text: |
+      ## Projektmanagement-Tools für Agenturen
+
+      ClickUp und Asana sind die am häufigsten genutzten Tools in kleinen Agenturen. Beide bieten kostenlose Einstiegstarife.
+
+      | Tool | Kostenloser Tarif | Zeiterfassung | Kundenzugang |
+      |---|---|---|---|
+      | ClickUp | ja | ja | ja |
+      | Asana | ja | ab Business-Tarif | ja |
+      | monday.com | ja (bis 2 Nutzer) | ab Pro-Tarif | ja |
+      | Basecamp | ja (ein Projekt) | ja | ja |
+
+      **Tipp:** Lege in der Testphase ein echtes Kundenprojekt an, nicht nur ein Demo-Projekt.
+    citations:
+      - "https://clickup.com/de/pricing"
+      - "https://www.asana.com/de/pricing/"
+    key:
+      mentioned: [h2-b4, h2-b1, h2-b2, h2-b3]
+      pages:
+        - "https://clickup.com/de/pricing"
+        - "https://asana.com/de/pricing"
+  - id: a030
+    project: h2
+    provider: ai_overview
+    language: en
+    text: |
+      **monday.com**, **Asana** and **ClickUp** are among the most widely used project management platforms for agencies. Monday work management offers customizable boards and client-facing dashboards, while ClickUp bundles docs, goals and time tracking. Agencies on tight budgets often pick Basecamp for its flat monthly pricing.
+    citations:
+      - "https://monday.com/work-management"
+      - "https://m.youtube.com/watch?v=Xy12AbCdEf0"
+      - "https://www.youtube.com/watch?v=Xy12AbCdEf0"
+    key:
+      mentioned: [h2-b2, h2-b1, h2-b4, h2-b3]
+      pages:
+        - "https://monday.com/work-management"
+        - "https://youtube.com/watch?v=Xy12AbCdEf0"
+  - id: a031
+    project: h3
+    provider: chatgpt
+    language: de
+    text: |
+      Für tägliches Pendeln (15–25 km pro Strecke) würde ich dir diese Marken empfehlen:
+
+      1. **Riese & Müller** – hochwertige Rahmen, viele Modelle mit Federung und Riemenantrieb, z. B. das Charger4.
+      2. **Gazelle** – niederländischer Klassiker, sehr komfortable Sitzposition.
+      3. **Kalkhoff** – gutes Preis-Leistungs-Verhältnis, große Händlerdichte in Deutschland.
+      4. **Stromer** – S-Pedelecs bis 45 km/h, falls du schneller unterwegs sein willst (Versicherungskennzeichen nötig).
+
+      Probefahrten beim Händler lohnen sich – die Rahmengröße ist wichtiger als jede Ausstattungsliste.
+    citations:
+      - "https://www.r-m.de/de/modelle/charger4/?utm_source=chatgpt.com"
+      - "https://www.gazelle.de/e-bikes/city?utm_source=chatgpt.com"
+      - "https://www.stromerbike.com/de/s-pedelec"
+    key:
+      mentioned: [h3-b1, h3-b4, h3-b7, h3-b5]
+      pages:
+        - "https://r-m.de/de/modelle/charger4"
+        - "https://gazelle.de/e-bikes/city"
+        - "https://stromerbike.com/de/s-pedelec"
+  - id: a032
+    project: h3
+    provider: claude
+    language: de
+    text: |
+      Ehrlich gesagt würde ich dir bei VanMoof derzeit zur Vorsicht raten. Die Räder sind schick, aber viele Teile sind proprietär, und nach der Insolvenz 2023 war die Ersatzteilversorgung lange unsicher. Wenn du täglich auf das Rad angewiesen bist, ist ein Hersteller mit breitem Händlernetz die sicherere Wahl.
+
+      Gute Alternativen mit ähnlich cleanem Design sind die Urban-Modelle von Riese und Müller oder ein Stromer, falls du ein S-Pedelec möchtest. Beide haben Werkstätten in fast jeder größeren Stadt.
+    citations: []
+    key:
+      mentioned: [h3-b2, h3-b1, h3-b5]
+      pages: []
+  - id: a033
+    project: h3
+    provider: perplexity
+    language: en
+    text: |
+      Cube is one of the most popular brands for commuting in Germany, thanks to its wide price range and large dealer network [1]. Models like the Kathmandu Hybrid or the Ella Ride Hybrid are frequently recommended for daily rides [2].
+
+      Battery capacity matters more than motor power for commuters: a 625 Wh battery gives roughly 60–120 km of range depending on assist level [3]. If you need to take the bike on regional trains, a folding e-bike that collapses into a compact cube may be more practical than a full-size trekking bike.
+
+      Alternatives include Kalkhoff and Haibike, which use similar Bosch drive systems [1].
+    citations:
+      - "https://www.cube.eu/de-de/e-bikes/trekking"
+      - "https://www.radfahren.de/test/e-bike-test-pendler/"
+      - "https://www.adac.de/rund-ums-fahrzeug/e-bike/akku-reichweite/#reichweite"
+    key:
+      mentioned: [h3-b3, h3-b7, h3-b6]
+      pages:
+        - "https://cube.eu/de-de/e-bikes/trekking"
+        - "https://radfahren.de/test/e-bike-test-pendler"
+        - "https://adac.de/rund-ums-fahrzeug/e-bike/akku-reichweite"
+  - id: a034
+    project: h3
+    provider: gemini
+    language: de
+    text: |
+      **Kurz und knapp:** Für den Stadtverkehr mit vielen Ampelstopps ist ein Mittelmotor ideal.
+
+      * **Gazelle Ultimate C380** – aufrechte Sitzposition, Nabenschaltung, wartungsarm.
+      * **Kalkhoff Endeavour** – sportlicher, gut für längere Strecken.
+      * **Haibike Trekking** – wenn du auch mal Feldwege fährst.
+
+      Mit einem kräftigen Motor kommst du an der Ampel flink wie eine Gazelle weg – achte aber auf gute Bremsen (hydraulische Scheibenbremsen).
+    citations:
+      - "https://www.gazelle.de/ultimate-c380"
+      - "https://www.kalkhoff-bikes.com/de_de/endeavour"
+      - "https://www.haibike.com/de/de/trekking"
+    key:
+      mentioned: [h3-b4, h3-b7, h3-b6]
+      pages:
+        - "https://gazelle.de/ultimate-c380"
+        - "https://kalkhoff-bikes.com/de_de/endeavour"
+        - "https://haibike.com/de/de/trekking"
+  - id: a035
+    project: h3
+    provider: ai_overview
+    language: de
+    text: |
+      Ein **Pendler-E-Bike** sollte einen **Akku mit mindestens 500 Wh**, eine **wartungsarme Schaltung** (z. B. Nabenschaltung oder Riemenantrieb), **fest montierte Schutzbleche, Licht und Gepäckträger** sowie **hydraulische Scheibenbremsen** haben. Für Strecken über 20 km kann ein S-Pedelec sinnvoll sein, das jedoch Versicherungskennzeichen, Helm und einen Führerschein der Klasse AM erfordert. Viele Arbeitgeber bieten zudem **Dienstrad-Leasing** an.
+    citations:
+      - "https://www.adfc.de/artikel/pedelecs-und-e-bikes"
+      - "https://www.adfc.de/artikel/pedelecs-und-e-bikes/"
+      - "https://www.vanmoof.com/de-DE/blog/s-pedelec-oder-pedelec"
+    key:
+      mentioned: []
+      pages:
+        - "https://adfc.de/artikel/pedelecs-und-e-bikes"
+        - "https://vanmoof.com/de-DE/blog/s-pedelec-oder-pedelec"
+  - id: a036
+    project: h3
+    provider: chatgpt
+    language: de
+    text: |
+      Wenn Design und Diebstahlschutz für dich im Vordergrund stehen, sind R&M und Cube eine gute Basis – mit einem guten Schloss und GPS-Tracker.
+
+      | Marke | Integriertes GPS | Preisbereich | Händlernetz |
+      |---|---|---|---|
+      | Riese & Müller | optional (RX Chip) | hoch | sehr gut |
+      | Cube | teilweise | mittel | sehr gut |
+      | Stromer | ja (Omni-App) | sehr hoch | gut |
+      | VanMoof | ja | mittel–hoch | eingeschränkt |
+
+      Ein gutes Falt- oder Bügelschloss solltest du trotzdem immer verwenden.
+    citations:
+      - "https://www.r-m.de/de/rx-chip/?utm_source=chatgpt.com"
+      - "https://www.cube.eu/de-de/"
+    key:
+      mentioned: [h3-b1, h3-b3, h3-b5, h3-b2]
+      pages:
+        - "https://r-m.de/de/rx-chip"
+        - "https://cube.eu/de-de"
+  - id: a037
+    project: h3
+    provider: claude
+    language: en
+    text: |
+      Gazelle would be my pick for your commute. You said you ride 12 km on mostly flat bike paths in Münster, wear normal work clothes and don't want to think about maintenance — that's exactly what Gazelle's city bikes are designed for: upright position, full chain guard, hub gears, and a frame that's easy to step through.
+
+      If you'd like something a bit sportier, Kalkhoff's Endeavour line is a good middle ground. I'd skip a high-end Riese & Müller unless you also plan to carry kids or groceries; you'd be paying for capability you don't need.
+    citations: []
+    key:
+      mentioned: [h3-b4, h3-b7, h3-b1]
+      pages: []
+  - id: a038
+    project: h3
+    provider: perplexity
+    language: de
+    text: |
+      Im Preisbereich bis 3.000 € schneiden in aktuellen Tests vor allem Modelle von Cube und Kalkhoff gut ab [1][2]. Besonders hervorgehoben wird dabei das Preis-Leistungs-Verhältnis des Cube Kathmandu Hybrid [1].
+
+      Wichtige Kriterien für Pendler sind laut Stiftung Warentest Bremsen, Rahmenstabilität und die Belastbarkeit des Gepäckträgers [3]. Einige getestete Modelle zeigten Schwächen bei der Akkuhalterung [3].
+    citations:
+      - "https://www.test.de/E-Bikes-im-Test-4612245-0/"
+      - "https://www.haibike.com/de/de/blog/e-bike-pendeln-tipps?srsltid=AfmBOop9kQ"
+      - "https://www.test.de/E-Bikes-im-Test-4612245-0/#testergebnisse"
+      - "https://www.kalkhoff-bikes.com/de_de/"
+    key:
+      mentioned: [h3-b3, h3-b7]
+      pages:
+        - "https://test.de/E-Bikes-im-Test-4612245-0"
+        - "https://haibike.com/de/de/blog/e-bike-pendeln-tipps"
+        - "https://kalkhoff-bikes.com/de_de"
+  - id: a039
+    project: h3
+    provider: gemini
+    language: de
+    text: |
+      Meine Top 3 fürs Pendeln 🚲⚡
+
+      🥇 riese & müller – wenn das Budget passt
+      🥈 Kalkhoff – solide & bezahlbar
+      🥉 Gazelle – maximaler Komfort
+
+      Und falls du ein S-Pedelec willst: Stromer! Die Dinger sind schnell, aber teuer.
+    citations: []
+    key:
+      mentioned: [h3-b1, h3-b7, h3-b4, h3-b5]
+      pages: []
+  - id: a040
+    project: h3
+    provider: ai_overview
+    language: de
+    text: |
+      Beliebte E-Bike-Marken für Pendler sind **Riese & Müller**, **Cube**, **Kalkhoff** und **Gazelle**. Für schnelle Pendelstrecken werden S-Pedelecs von **Stromer** empfohlen, die bis zu 45 km/h unterstützen. VanMoof-Räder fallen durch ihr Design auf, gelten aber wegen proprietärer Bauteile als schwieriger zu reparieren.
+    citations:
+      - "https://www.r-m.de/de/"
+      - "https://m.focus.de/auto/ratgeber/e-bike-pendler-vergleich_id_259871234.html"
+      - "https://www.focus.de/auto/ratgeber/e-bike-pendler-vergleich_id_259871234.html?utm_source=google&utm_medium=ai"
+    key:
+      mentioned: [h3-b1, h3-b3, h3-b7, h3-b4, h3-b5, h3-b2]
+      pages:
+        - "https://r-m.de/de"
+        - "https://focus.de/auto/ratgeber/e-bike-pendler-vergleich_id_259871234.html"
+  - id: a041
+    project: h3
+    provider: chatgpt
+    language: en
+    text: |
+      Here's a quick comparison of commuter-friendly e-bikes available in Germany:
+
+      | Model | Motor | Battery | Gears | Approx. price |
+      |---|---|---|---|---|
+      | Riese & Müller Roadster4 | Bosch Performance Line | 625 Wh | Enviolo hub | €5,000+ |
+      | Cube Kathmandu Hybrid | Bosch Performance CX | 750 Wh | 12-speed | €3,500 |
+      | Gazelle Ultimate C380 | Bosch Performance | 500 Wh | Enviolo hub | €3,800 |
+      | Haibike Trekking 6 | Yamaha PW-ST | 630 Wh | 10-speed | €3,200 |
+
+      If you ride in all weather, the hub-gear models (Roadster4, Ultimate) need noticeably less maintenance.
+    citations:
+      - "https://www.r-m.de/en-de/models/roadster4/"
+      - "https://www.cube.eu/en-de/kathmandu-hybrid"
+    key:
+      mentioned: [h3-b1, h3-b3, h3-b4, h3-b6]
+      pages:
+        - "https://r-m.de/en-de/models/roadster4"
+        - "https://cube.eu/en-de/kathmandu-hybrid"
+  - id: a042
+    project: h3
+    provider: claude
+    language: de
+    text: |
+      Bevor du dich für eine Marke entscheidest, würde ich zwei Dinge klären:
+
+      Erstens: Bietet dein Arbeitgeber Dienstrad-Leasing an? Dann ist der Preisunterschied zwischen einem Mittelklasse- und einem Premiumrad über die Laufzeit oft kleiner, als man denkt, und du bist an die Partnerhändler des Leasinganbieters gebunden.
+
+      Zweitens: Wo kannst du das Rad sicher abstellen? Ein teures Rad, das täglich am Bahnhof steht, ist ein Diebstahlrisiko. Dann lohnt sich eher ein unauffälliges Modell plus Versicherung.
+
+      Wenn du mir sagst, wie lang deine Strecke ist und wie hügelig, kann ich dir konkrete Modelle vorschlagen.
+    citations: []
+    key:
+      mentioned: []
+      pages: []
+  - id: a043
+    project: h3
+    provider: perplexity
+    language: de
+    text: |
+      Cube und Haibike gehören zu den meistverkauften E-Bike-Marken in Deutschland [1]. Cube setzt dabei überwiegend auf Bosch-Antriebe, während Haibike auch Yamaha-Motoren verbaut [2].
+
+      Für Pendler mit Steigungen ist ein Drehmoment von mindestens 75 Nm empfehlenswert [3]. Bei Haibikes Trekking-Modellen ist das in der Regel gegeben.
+    citations:
+      - "https://www.zweirad-industrie-verband.de/marktdaten/"
+      - "https://www.cube.eu/de-de/technologie/"
+      - "https://www.ebike-news.de/drehmoment-erklaert/amp/"
+    key:
+      mentioned: [h3-b3, h3-b6]
+      pages:
+        - "https://zweirad-industrie-verband.de/marktdaten"
+        - "https://cube.eu/de-de/technologie"
+        - "https://ebike-news.de/drehmoment-erklaert/amp"
+  - id: a044
+    project: h3
+    provider: gemini
+    language: en
+    text: |
+      ### Best premium e-bikes for commuting
+
+      **Stromer ST3** — a Swiss S-pedelec with up to 45 km/h assistance, rear hub motor and excellent range. Ideal for 20+ km commutes on country roads.
+
+      **Riese & Müller Supercharger** — dual-battery option, full suspension, built like a tank.
+
+      **What I would avoid:** the VanMoof S5. While stylish, spare parts and service have been inconsistent since the company's 2023 restructuring, so it's not the best choice for a bike you depend on daily.
+    citations:
+      - "https://www.stromerbike.com/en/st3"
+      - "https://www.r-m.de/en/models/supercharger4/#specs"
+      - "https://www.vanmoof.com/en-DE/s5"
+    key:
+      mentioned: [h3-b5, h3-b1, h3-b2]
+      pages:
+        - "https://stromerbike.com/en/st3"
+        - "https://r-m.de/en/models/supercharger4"
+        - "https://vanmoof.com/en-DE/s5"
+  - id: a045
+    project: h3
+    provider: ai_overview
+    language: de
+    text: |
+      Gazelle gilt als einer der traditionsreichsten Hersteller für komfortable City- und Trekking-E-Bikes. Für sportlichere Pendler bieten Kalkhoff und Cube eine große Auswahl zwischen 2.500 und 4.000 Euro.
+    citations:
+      - "https://www.gazelle.de/ueber-gazelle/"
+      - "https://www.kalkhoff-bikes.com/de_de/e-bikes/trekking?page=2&utm_source=google"
+    key:
+      mentioned: [h3-b4, h3-b7, h3-b3]
+      pages:
+        - "https://gazelle.de/ueber-gazelle"
+        - "https://kalkhoff-bikes.com/de_de/e-bikes/trekking?page=2"
+  - id: a046
+    project: h4
+    provider: chatgpt
+    language: en
+    text: |
+      The best password managers right now:
+
+      1. **Bitwarden** – open source, generous free plan, independently audited.
+      2. **1Password** – most polished apps, great for families and teams (Travel Mode, Watchtower).
+      3. **Proton Pass** – strong privacy focus, unlimited hide-my-email aliases on paid plans.
+      4. **Dashlane** – good UI, built-in breach monitoring.
+
+      If you want free and trustworthy, go with Bitwarden. If you're willing to pay for the smoothest experience, 1Password.
+    citations:
+      - "https://bitwarden.com/pricing/?utm_source=chatgpt.com"
+      - "https://1password.com/?utm_source=chatgpt.com"
+      - "https://proton.me/pass?utm_source=chatgpt.com"
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b6, h4-b3]
+      pages:
+        - "https://bitwarden.com/pricing"
+        - "https://1password.com"
+        - "https://proton.me/pass"
+  - id: a047
+    project: h4
+    provider: claude
+    language: en
+    text: |
+      Keeper is a reasonable choice for a small business, especially if you need compliance reporting and granular admin controls. Its admin console is more enterprise-oriented than most.
+
+      For your family, though, I'd look for a password manager that turns out to be a keeper for your less technical relatives too — something with gentle onboarding. 1Password's family plan does this well: shared vaults, account recovery by the family organizer, and apps that are hard to get lost in.
+    citations: []
+    key:
+      mentioned: [h4-b4, h4-b1]
+      pages: []
+  - id: a048
+    project: h4
+    provider: perplexity
+    language: en
+    text: |
+      Independent reviews in 2026 consistently rank Bitwarden and 1Password at the top, with Proton Pass gaining ground [1][2].
+
+      | | Free plan | Open source | Passkeys | Price (individual, yearly) |
+      |---|---|---|---|---|
+      | Bitwarden | Yes | Yes | Yes | ~$10–20 |
+      | 1Password | No | No | Yes | ~$36 |
+      | Proton Pass | Yes | Yes | Yes | ~$24–48 |
+      | NordPass | Yes | No | Yes | ~$18–24 |
+      | Keeper | Limited | No | Yes | ~$35 |
+
+      All five support passkeys and two-factor authentication [3].
+    citations:
+      - "https://www.pcmag.com/picks/the-best-password-managers"
+      - "https://www.wired.com/story/best-password-managers/"
+      - "https://www.security.org/password-manager/passkeys/"
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b6, h4-b5, h4-b4]
+      pages:
+        - "https://pcmag.com/picks/the-best-password-managers"
+        - "https://wired.com/story/best-password-managers"
+        - "https://security.org/password-manager/passkeys"
+  - id: a049
+    project: h4
+    provider: gemini
+    language: de
+    text: |
+      ## Passwort-Manager für Einsteiger
+
+      Wenn du gerade erst anfängst, ist **Bitwarden** eine sehr gute Wahl: kostenlos, quelloffen und auf allen Geräten verfügbar.
+
+      **Weitere Optionen:**
+      * **1Password** – sehr komfortabel, aber kostenpflichtig.
+      * **NordPass** – einfache Bedienung, vom Anbieter von NordVPN.
+      * **Dashlane** – mit Darknet-Überwachung.
+
+      **Wichtig:** Wähle ein langes, einzigartiges Master-Passwort und aktiviere die Zwei-Faktor-Authentifizierung.
+    citations:
+      - "https://bitwarden.com/de-de/"
+      - "https://bitwarden.com/de-de"
+      - "https://nordpass.com/de/"
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b5, h4-b3]
+      pages:
+        - "https://bitwarden.com/de-de"
+        - "https://nordpass.com/de"
+  - id: a050
+    project: h4
+    provider: ai_overview
+    language: en
+    text: |
+      A **password manager** stores your passwords in an encrypted vault protected by a single master password. Look for:
+      - **Zero-knowledge encryption**, so the provider can't read your data
+      - **Passkey support** and two-factor authentication
+      - **Cross-platform apps** and browser extensions
+      - **Independent security audits**
+
+      Free options exist, but paid plans usually add secure sharing, emergency access and breach alerts.
+    citations:
+      - "https://www.dashlane.com/blog/what-is-a-password-manager"
+      - "https://www.nist.gov/itl/applied-cybersecurity/tig/back-basics/multi-factor-authentication"
+      - "https://www.keepersecurity.com/resources/glossary/zero-knowledge/?gclid=EAIaIQobChMI8x"
+    key:
+      mentioned: []
+      pages:
+        - "https://dashlane.com/blog/what-is-a-password-manager"
+        - "https://nist.gov/itl/applied-cybersecurity/tig/back-basics/multi-factor-authentication"
+        - "https://keepersecurity.com/resources/glossary/zero-knowledge"
+  - id: a051
+    project: h4
+    provider: chatgpt
+    language: en
+    text: |
+      For a single user on Windows and Android who wants something free, I'd go with **Bitwarden**. The free tier has no device limits, which is rare.
+
+      A few you can probably skip for your situation:
+      - **Keeper** – solid security, but the free plan is very limited and the upsells are frequent.
+      - **Dashlane** – no longer has a meaningful free plan.
+
+      If you later want a more polished experience, Proton Pass Plus is a good upgrade, especially if you already use Proton Mail.
+    citations:
+      - "https://bitwarden.com/products/personal/"
+      - "https://www.keepersecurity.com/pricing/personal-and-family.html#free"
+    key:
+      mentioned: [h4-b2, h4-b4, h4-b3, h4-b6]
+      pages:
+        - "https://bitwarden.com/products/personal"
+        - "https://keepersecurity.com/pricing/personal-and-family.html"
+  - id: a052
+    project: h4
+    provider: claude
+    language: de
+    text: |
+      Für ein Team mit 15 Leuten würde ich dir 1Password Business oder Bitwarden Teams empfehlen. Beide bieten geteilte Tresore, Rollen und eine Übersicht über schwache Passwörter.
+
+      Keeper ist ebenfalls eine Option, vor allem wenn ihr Compliance-Berichte braucht. Kleine Randnotiz, weil du Fußball erwähnt hast: Ein guter Passwort-Manager ist ein bisschen wie ein guter Keeper im Tor – man merkt ihn erst, wenn etwas durchrutscht.
+    citations: []
+    key:
+      mentioned: [h4-b1, h4-b2, h4-b4]
+      pages: []
+  - id: a053
+    project: h4
+    provider: perplexity
+    language: en
+    text: |
+      Both Proton Pass and Bitwarden are open source and have been independently audited [1][2]. Key differences:
+
+      - **Email aliases:** Proton Pass includes hide-my-email aliases; Bitwarden integrates with third-party alias services [1].
+      - **Self-hosting:** only Bitwarden can be self-hosted [3].
+      - **Ecosystem:** Proton Pass fits best if you already use Proton Mail or Proton VPN.
+
+      A detailed explanation of vault encryption models is available in this [security white paper](https://1password.com/files/1password-white-paper.pdf) [4].
+    citations:
+      - "https://proton.me/pass/security"
+      - "https://bitwarden.com/help/is-bitwarden-audited/"
+      - "https://bitwarden.com/help/install-on-premise-linux/"
+      - "https://1password.com/files/1password-white-paper.pdf"
+    key:
+      mentioned: [h4-b6, h4-b2]
+      pages:
+        - "https://proton.me/pass/security"
+        - "https://bitwarden.com/help/is-bitwarden-audited"
+        - "https://bitwarden.com/help/install-on-premise-linux"
+        - "https://1password.com/files/1password-white-paper.pdf"
+  - id: a054
+    project: h4
+    provider: gemini
+    language: en
+    text: |
+      My honest ranking 🔐
+
+      1️⃣ bitwarden — free, open source, does everything most people need
+      2️⃣ 1password — worth the money if you share with family
+      3️⃣ nordpass — simple, nice autofill
+      4️⃣ dashlane — good, but pricey for what it is
+
+      Pro tip: whichever you choose, export an encrypted backup once a year.
+    citations: []
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b5, h4-b3]
+      pages: []
+  - id: a055
+    project: h4
+    provider: ai_overview
+    language: en
+    text: |
+      **Bitwarden**, **1Password** and **Dashlane** are frequently rated the best password managers. Bitwarden is recommended for its free, open-source plan, 1Password for its ease of use and family sharing, and Dashlane for built-in dark web monitoring.
+    citations:
+      - "https://www.cnet.com/tech/services-and-software/best-password-manager/"
+      - "https://www.cnet.com/tech/services-and-software/best-password-manager/#ftag=CAD590a51e"
+      - "https://www.tomsguide.com/us/best-password-managers,review-3785.html"
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b3]
+      pages:
+        - "https://cnet.com/tech/services-and-software/best-password-manager"
+        - "https://tomsguide.com/us/best-password-managers,review-3785.html"
+  - id: a056
+    project: h4
+    provider: chatgpt
+    language: de
+    text: |
+      Ein Passwort-Manager lohnt sich praktisch für jeden. Wichtig bei der Auswahl:
+
+      - **Ende-zu-Ende-Verschlüsselung** (Zero-Knowledge-Prinzip)
+      - **Serverstandort und Datenschutz**, z. B. Hosting in der EU
+      - **Notfallzugriff** für Angehörige
+      - **Import** aus dem Browser, damit du nicht alles neu eintippen musst
+
+      Das BSI empfiehlt außerdem, das Master-Passwort nirgendwo sonst zu verwenden und die Zwei-Faktor-Authentisierung zu aktivieren.
+    citations:
+      - "https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Passwort-Manager/passwort-manager_node.html?utm_source=chatgpt.com"
+    key:
+      mentioned: []
+      pages:
+        - "https://bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Passwort-Manager/passwort-manager_node.html"
+  - id: a057
+    project: h4
+    provider: claude
+    language: en
+    text: |
+      I wouldn't move to Dashlane right now. Its features are fine, but for a family of four you'd pay noticeably more than with 1Password's family plan, and Dashlane's Linux support is limited to the browser extension — which matters since you said your son uses Ubuntu.
+
+      1Password's family plan covers five people, includes shared vaults, and lets you recover a family member's account if they lose their Secret Key. That last feature tends to be the one families end up needing.
+    citations: []
+    key:
+      mentioned: [h4-b3, h4-b1]
+      pages: []
+  - id: a058
+    project: h4
+    provider: perplexity
+    language: en
+    text: |
+      Keeper Security is one of the few password managers with FedRAMP authorization, which makes it common in US government and regulated industries [1]. Keeper also offers a privileged access management add-on [2].
+
+      For smaller organizations, reviewers often favor 1Password Business for usability and Bitwarden for price [3].
+    citations:
+      - "https://www.keepersecurity.com/en_GB/government-cloud/fedramp.html"
+      - "https://www.keepersecurity.com/privileged-access-management/"
+      - "https://www.techradar.com/best/best-password-manager-for-business"
+    key:
+      mentioned: [h4-b4, h4-b1, h4-b2]
+      pages:
+        - "https://keepersecurity.com/en_GB/government-cloud/fedramp.html"
+        - "https://keepersecurity.com/privileged-access-management"
+        - "https://techradar.com/best/best-password-manager-for-business"
+  - id: a059
+    project: h4
+    provider: gemini
+    language: en
+    text: |
+      **For families, the best options are 1Password and Bitwarden.**
+
+      | Plan | Users | Shared vaults | Price/year (approx.) |
+      |---|---|---|---|
+      | 1Password Families | 5 | Yes | $60 |
+      | Bitwarden Families | 6 | Yes | $40 |
+      | Proton Pass Family | 6 | Yes | ~$80 (Proton Family bundle) |
+
+      Both 1Password and Bitwarden let a family organizer manage members and recover access.
+    citations:
+      - "https://1password.com/families"
+      - "https://bitwarden.com/pricing/?ref=gemini#families"
+    key:
+      mentioned: [h4-b1, h4-b2, h4-b6]
+      pages:
+        - "https://1password.com/families"
+        - "https://bitwarden.com/pricing"
+  - id: a060
+    project: h4
+    provider: ai_overview
+    language: de
+    text: |
+      Zu den empfehlenswerten Passwort-Managern zählen laut Tests **Bitwarden**, **1Password** und **Proton Pass**. Bitwarden ist quelloffen und in der Basisversion kostenlos; Proton Pass wird vom Schweizer Unternehmen Proton AG entwickelt und legt besonderen Wert auf Datenschutz.
+    citations:
+      - "https://www.heise.de/tests/Passwort-Manager-im-Test-9876543.html"
+      - "https://www.heise.de/tests/Passwort-Manager-im-Test-9876543.html?seite=2"
+      - "https://www.chip.de/artikel/Passwort-Manager-Test_123456789.html"
+    key:
+      mentioned: [h4-b2, h4-b1, h4-b6]
+      pages:
+        - "https://heise.de/tests/Passwort-Manager-im-Test-9876543.html"
+        - "https://heise.de/tests/Passwort-Manager-im-Test-9876543.html?seite=2"
+        - "https://chip.de/artikel/Passwort-Manager-Test_123456789.html"
+  - id: a061
+    project: h5
+    provider: chatgpt
+    language: en
+    text: |
+      If you're moving to Germany and want genuinely green electricity, these providers are well regarded:
+
+      - **EWS Schönau** – a citizens' cooperative that started after Chernobyl; invests in new renewable plants.
+      - **Naturstrom** – one of the oldest independent green suppliers, certified by the Grüner Strom Label.
+      - **Polarstern** – Munich-based, supports energy projects in developing countries.
+      - **Tibber** – dynamic hourly pricing via app; great if you have an EV or heat pump and can shift usage.
+
+      Don't compare only the price per kWh — check the monthly base fee and contract length too.
+    citations:
+      - "https://www.ews-schoenau.de/oekostrom/?utm_source=chatgpt.com"
+      - "https://www.naturstrom.de/privatkunden/oekostrom"
+      - "https://www.polarstern-energie.de/oekostrom/?utm_source=chatgpt.com"
+      - "https://tibber.com/de?utm_source=chatgpt.com"
+    key:
+      mentioned: [h5-b4, h5-b2, h5-b5, h5-b3]
+      pages:
+        - "https://ews-schoenau.de/oekostrom"
+        - "https://naturstrom.de/privatkunden/oekostrom"
+        - "https://polarstern-energie.de/oekostrom"
+        - "https://tibber.com/de"
+  - id: a062
+    project: h5
+    provider: claude
+    language: de
+    text: |
+      Bei deinem Verbrauch von rund 2.000 kWh im Jahr lohnt sich ein Blick auf LichtBlick und die EWS. LichtBlick ist einer der größten Ökostromanbieter in Deutschland und bietet oft eine Preisgarantie für 12 Monate.
+
+      Ein kleiner Lichtblick bei den aktuellen Preisen: Viele Anbieter haben ihre Neukundentarife im letzten Jahr wieder gesenkt. Ein Wechsel ist meist in wenigen Minuten online erledigt, und der neue Anbieter kündigt den alten Vertrag für dich.
+    citations: []
+    key:
+      mentioned: [h5-b1, h5-b4]
+      pages: []
+  - id: a063
+    project: h5
+    provider: perplexity
+    language: de
+    text: |
+      Ob sich ein dynamischer Stromtarif lohnt, hängt vom Verbrauchsprofil ab [1]. Voraussetzung ist ein intelligentes Messsystem (Smart Meter) [2].
+
+      | Anbieter | Dynamischer Tarif | Monatliche Grundgebühr | App |
+      |---|---|---|---|
+      | Tibber | ja | ca. 6 € | ja |
+      | Octopus Energy | ja | variabel | ja |
+      | E.ON | ja | variabel | ja |
+      | LichtBlick | teilweise | variabel | ja |
+
+      Haushalte mit E-Auto oder Wärmepumpe profitieren am stärksten [1][3].
+    citations:
+      - "https://www.verbraucherzentrale.de/wissen/energie/strom/dynamische-stromtarife-91234"
+      - "https://www.bundesnetzagentur.de/DE/Vportal/Energie/Metering/start.html"
+      - "https://www.finanztip.de/stromvergleich/dynamischer-stromtarif/"
+    key:
+      mentioned: [h5-b3, h5-b6, h5-b7, h5-b1]
+      pages:
+        - "https://verbraucherzentrale.de/wissen/energie/strom/dynamische-stromtarife-91234"
+        - "https://bundesnetzagentur.de/DE/Vportal/Energie/Metering/start.html"
+        - "https://finanztip.de/stromvergleich/dynamischer-stromtarif"
+  - id: a064
+    project: h5
+    provider: gemini
+    language: de
+    text: |
+      ## Ökostrom mit Zusatznutzen
+
+      **Polarstern** ist eine gute Wahl, wenn dir soziale Wirkung wichtig ist: Ein Teil der Einnahmen fließt in Biogasanlagen für Familien in Kambodscha.
+
+      Wer sich am Polarstern orientiert, findet den Norden – und wer sich an unabhängigen Labels orientiert, findet echten Ökostrom. Achte auf das **ok-power-Label** oder das **Grüner Strom Label**.
+
+      Weitere unabhängige Anbieter: Naturstrom, Elektrizitätswerke Schönau.
+    citations:
+      - "https://www.polarstern-energie.de/wirkung/"
+      - "https://www.ok-power.de/"
+    key:
+      mentioned: [h5-b5, h5-b2, h5-b4]
+      pages:
+        - "https://polarstern-energie.de/wirkung"
+        - "https://ok-power.de"
+  - id: a065
+    project: h5
+    provider: ai_overview
+    language: de
+    text: |
+      **Echter Ökostrom** stammt nicht nur aus erneuerbaren Quellen, sondern der Anbieter investiert auch in den **Ausbau neuer Anlagen**. Unabhängige Siegel wie das **Grüner Strom Label** oder **ok-power** helfen bei der Auswahl. Reine Herkunftsnachweise belegen dagegen nur, dass irgendwo in Europa entsprechend viel Ökostrom erzeugt wurde.
+    citations:
+      - "https://www.utopia.de/ratgeber/oekostrom-anbieter/"
+      - "https://www.lichtblick.de/ratgeber/herkunftsnachweise/?srsltid=AfmBOoqZ1x"
+      - "https://utopia.de/ratgeber/oekostrom-anbieter"
+    key:
+      mentioned: []
+      pages:
+        - "https://utopia.de/ratgeber/oekostrom-anbieter"
+        - "https://lichtblick.de/ratgeber/herkunftsnachweise"
+  - id: a066
+    project: h5
+    provider: chatgpt
+    language: de
+    text: |
+      Kurz: Ja, ein Wechsel lohnt sich wahrscheinlich.
+
+      **Raus aus der Grundversorgung (bei dir E.ON):** Grundversorgungstarife sind oft deutlich teurer als Sondertarife. In der Grundversorgung von Eon zu bleiben, würde ich dir daher nicht empfehlen.
+
+      **Gute Alternativen:**
+      - Octopus Energy – faire Preise, gute App, kurze Kündigungsfrist
+      - NATURSTROM – sehr strenge Ökokriterien
+      - Lichtblick – großer Anbieter mit stabilen Tarifen
+    citations:
+      - "https://www.check24.de/strom/?utm_source=chatgpt.com"
+      - "https://octopusenergy.de/tarife?utm_source=chatgpt.com"
+    key:
+      mentioned: [h5-b7, h5-b6, h5-b2, h5-b1]
+      pages:
+        - "https://check24.de/strom"
+        - "https://octopusenergy.de/tarife"
+  - id: a067
+    project: h5
+    provider: claude
+    language: de
+    text: |
+      Ob dein Anbieter "echten" Ökostrom liefert, kannst du in drei Schritten prüfen:
+
+      1. **Stromkennzeichnung ansehen.** Jeder Versorger muss auf der Rechnung angeben, aus welchen Quellen der Strom stammt.
+      2. **Verflechtungen prüfen.** Manche Ökostrom-Marken gehören zu Konzernen, die weiterhin Kohlekraftwerke betreiben.
+      3. **Auf Labels achten.** Das Grüner Strom Label und ok-power verlangen, dass ein Teil der Einnahmen in neue Anlagen fließt.
+
+      Wenn du mir den Namen deines aktuellen Tarifs nennst, schaue ich gern, wie er einzuordnen ist.
+    citations: []
+    key:
+      mentioned: []
+      pages: []
+  - id: a068
+    project: h5
+    provider: perplexity
+    language: en
+    text: |
+      Octopus Energy has grown quickly in Germany by offering simple tariffs and a well-rated app [1][2]. Octopus also offers a dynamic tariff for customers with a smart meter [3].
+
+      Like the octopus it is named after, the group has many arms: energy supply, its Kraken software platform and renewable generation [2].
+
+      Compared with Tibber, its dynamic pricing is similar, but the base fee is structured differently [3].
+    citations:
+      - "https://octopusenergy.de/"
+      - "https://www.handelsblatt.com/unternehmen/energie/octopus-energy-deutschland/100012345.html"
+      - "https://octopusenergy.de/dynamischer-tarif#faq"
+    key:
+      mentioned: [h5-b6, h5-b3]
+      pages:
+        - "https://octopusenergy.de"
+        - "https://handelsblatt.com/unternehmen/energie/octopus-energy-deutschland/100012345.html"
+        - "https://octopusenergy.de/dynamischer-tarif"
+  - id: a069
+    project: h5
+    provider: gemini
+    language: de
+    text: |
+      Meine drei Favoriten 🌱⚡
+
+      🌞 **ews** (Elektrizitätswerke Schönau) – Bürgerenergie-Pionier, sehr glaubwürdig
+      💧 **naturstrom** – investiert seit Jahren in neue Anlagen
+      📱 **tibber** – wenn du mit Smart Meter und App Geld sparen willst
+
+      Ein Wechsel geht online in ca. 5 Minuten.
+    citations:
+      - "https://www.ews-schoenau.de/"
+      - "https://naturstrom.de"
+      - "https://tibber.com/de/"
+    key:
+      mentioned: [h5-b4, h5-b2, h5-b3]
+      pages:
+        - "https://ews-schoenau.de"
+        - "https://naturstrom.de"
+        - "https://tibber.com/de"
+  - id: a070
+    project: h5
+    provider: ai_overview
+    language: en
+    text: |
+      Recommended green electricity providers in Germany include **EWS Schönau**, **Naturstrom** and **Polarstern**, which are certified by the Grüner Strom Label or ok-power. Large suppliers such as **E.ON** also offer green tariffs, but these typically rely on certificates of origin rather than funding new plants.
+    citations:
+      - "https://www.ews-schoenau.de"
+      - "https://www.gruenerstromlabel.de/zertifizierte-anbieter/"
+      - "https://www.eon.de/de/pk/strom/oekostrom.html"
+    key:
+      mentioned: [h5-b4, h5-b2, h5-b5, h5-b7]
+      pages:
+        - "https://ews-schoenau.de"
+        - "https://gruenerstromlabel.de/zertifizierte-anbieter"
+        - "https://eon.de/de/pk/strom/oekostrom.html"
+  - id: a071
+    project: h5
+    provider: chatgpt
+    language: de
+    text: |
+      Hier ein Vergleich bekannter Ökostromanbieter (Beispiel Berlin, 2.500 kWh/Jahr):
+
+      | Anbieter | Label | Förderung neuer Anlagen | Preisgarantie |
+      |---|---|---|---|
+      | EWS Schönau | Grüner Strom Label | ja | 12 Monate |
+      | Naturstrom | Grüner Strom Label | ja | 12 Monate |
+      | Polarstern | Grüner Strom Label | ja | 12 Monate |
+      | LichtBlick | TÜV | teilweise | 12–24 Monate |
+
+      Polarstern liegt preislich oft im Mittelfeld, punktet aber mit seinem Wirkungsprogramm. Die konkreten Preise hängen von deiner Postleitzahl ab.
+    citations:
+      - "https://www.verivox.de/strom/oekostrom/?utm_source=chatgpt.com"
+    key:
+      mentioned: [h5-b4, h5-b2, h5-b5, h5-b1]
+      pages:
+        - "https://verivox.de/strom/oekostrom"
+  - id: a072
+    project: h5
+    provider: claude
+    language: de
+    text: |
+      Für dein Setup mit Wärmepumpe und Wallbox spricht viel für einen dynamischen Tarif. Tibbers großer Vorteil ist die Integration: Die App kann dein E-Auto automatisch in den günstigsten Stunden laden, sofern Wallbox oder Auto unterstützt werden.
+
+      Beim dynamischen Tarif von Octopus ist die Grundgebühr etwas anders aufgebaut, dafür zahlst du keinen separaten Monatsbeitrag für die App. Rechne beide Varianten mit deinem Lastprofil durch – bei einem Verbrauch von über 6.000 kWh macht schon ein Cent pro kWh einen spürbaren Unterschied.
+    citations: []
+    key:
+      mentioned: [h5-b3, h5-b6]
+      pages: []
+  - id: a073
+    project: h5
+    provider: perplexity
+    language: de
+    text: |
+      Laut Utopia und Verbraucherzentrale gehören EWS Schönau, Naturstrom und Polarstern zu den empfehlenswerten unabhängigen Ökostromanbietern [1][2].
+
+      Lichtblick wird in einigen Vergleichen kritischer gesehen, weil das Unternehmen zum Eneco-Konzern gehört [3]. Wer Wert auf vollständige Unabhängigkeit legt, sollte LichtBlick daher eher nicht wählen.
+    citations:
+      - "https://utopia.de/bestenlisten/die-besten-oekostrom-anbieter/"
+      - "https://www.verbraucherzentrale.de/wissen/energie/strom/oekostrom-91235#unabhaengig"
+      - "https://www.robinwood.de/oekostromreport"
+    key:
+      mentioned: [h5-b4, h5-b2, h5-b5, h5-b1]
+      pages:
+        - "https://utopia.de/bestenlisten/die-besten-oekostrom-anbieter"
+        - "https://verbraucherzentrale.de/wissen/energie/strom/oekostrom-91235"
+        - "https://robinwood.de/oekostromreport"
+  - id: a074
+    project: h5
+    provider: gemini
+    language: en
+    text: |
+      **Switching away from E.ON's basic supply is usually worth it.**
+
+      Here's why:
+      * Basic supply ("Grundversorgung") tariffs are typically 20–40% more expensive than special contracts.
+      * You can cancel basic supply with two weeks' notice.
+
+      **Good alternatives:**
+      * **Octopus Energy** – straightforward tariffs and English-language customer support, popular with expats.
+      * **Tibber** – if you have a smart meter.
+
+      Check the price for your postcode on a comparison site before signing.
+    citations:
+      - "https://octopusenergy.de/en"
+      - "https://www.check24.de/strom/grundversorgung/#kuendigung"
+    key:
+      mentioned: [h5-b7, h5-b6, h5-b3]
+      pages:
+        - "https://octopusenergy.de/en"
+        - "https://check24.de/strom/grundversorgung"
+  - id: a075
+    project: h5
+    provider: ai_overview
+    language: de
+    text: |
+      Ein Wechsel des Stromanbieters ist in Deutschland meist mit einer Frist von zwei Wochen bis einem Monat möglich. Der neue Anbieter, etwa **LichtBlick**, **Octopus Energy** oder **Naturstrom**, übernimmt in der Regel die Kündigung beim bisherigen Versorger.
+    citations:
+      - "https://www.verbraucherzentrale.de/wissen/energie/strom/stromanbieter-wechseln-91236"
+      - "https://www.lichtblick.de/strom/"
+      - "https://www.lichtblick.de/strom?utm_medium=ai_overview&utm_source=google"
+    key:
+      mentioned: [h5-b1, h5-b6, h5-b2]
+      pages:
+        - "https://verbraucherzentrale.de/wissen/energie/strom/stromanbieter-wechseln-91236"
+        - "https://lichtblick.de/strom"
+  - id: a076
+    project: h6
+    provider: chatgpt
+    language: en
+    text: |
+      For a first marathon with a neutral gait, these are reliable picks:
+
+      1. **Brooks Ghost 17** – smooth, durable, easy to like.
+      2. **ASICS Novablast 5** – bouncy and fun for long runs.
+      3. **HOKA Clifton 10** – max cushioning without feeling sluggish.
+      4. **New Balance Fresh Foam X 1080** – plush and roomy in the toe box.
+
+      Rotate two pairs if you can, and consider half a size up for long distances.
+    citations:
+      - "https://www.brooksrunning.com/en_us/ghost-17/?utm_source=chatgpt.com"
+      - "https://www.runnersworld.com/gear/a19663621/best-running-shoes/?utm_source=chatgpt.com"
+    key:
+      mentioned: [h6-b1, h6-b4, h6-b3, h6-b6]
+      pages:
+        - "https://brooksrunning.com/en_us/ghost-17"
+        - "https://runnersworld.com/gear/a19663621/best-running-shoes"
+  - id: a077
+    project: h6
+    provider: claude
+    language: en
+    text: |
+      Brooks makes the shoe I'd try first: the Adrenaline GTS is the default stability trainer for good reason, with guide rails that support without forcing your foot into a position.
+
+      If you're more interested in a lighter feel, the On Cloudrunner is worth trying on, though On shoes tend to run narrow. Whatever you pick, test it on your usual routes — trail running along brooks and muddy paths is a different job from road miles, and you may want a separate trail pair.
+    citations: []
+    key:
+      mentioned: [h6-b1, h6-b2]
+      pages: []
+  - id: a078
+    project: h6
+    provider: perplexity
+    language: de
+    text: |
+      Für Läufer mit Überpronation werden in Tests vor allem Stabilitätsschuhe mit Führungselementen empfohlen [1][2].
+
+      | Modell | Sprengung | Gewicht (Herren) | Stütztechnologie |
+      |---|---|---|---|
+      | Brooks Adrenaline GTS 24 | 12 mm | ca. 286 g | GuideRails |
+      | Asics Gel-Kayano 32 | 8 mm | ca. 300 g | 4D Guidance |
+      | Saucony Guide 18 | 6 mm | ca. 275 g | Center Path |
+      | Mizuno Wave Inspire 21 | 12 mm | ca. 290 g | Wave Plate |
+
+      Eine Laufanalyse im Fachhandel hilft, den passenden Schuh zu finden [3].
+    citations:
+      - "https://www.runnersworld.de/laufschuhe/stabilitaetsschuhe-test/amp/"
+      - "https://www.achim-achilles.de/laufschuhe/stabilschuhe-vergleich"
+      - "https://www.laufen.de/laufanalyse"
+    key:
+      mentioned: [h6-b1, h6-b4, h6-b5, h6-b7]
+      pages:
+        - "https://runnersworld.de/laufschuhe/stabilitaetsschuhe-test/amp"
+        - "https://achim-achilles.de/laufschuhe/stabilschuhe-vergleich"
+        - "https://laufen.de/laufanalyse"
+  - id: a079
+    project: h6
+    provider: gemini
+    language: en
+    text: |
+      ### Best lightweight daily trainers
+
+      **On Cloudsurfer 2** – very smooth heel-to-toe transition; On's CloudTec Phase cushioning compresses in sequence.
+
+      **Saucony Ride 18** – a dependable all-rounder.
+
+      **Hoka Mach 6** – light and snappy, good for tempo days.
+
+      On shoes generally have a firmer feel than Hoka, so try them on before buying if you prefer soft cushioning.
+    citations:
+      - "https://www.on.com/en-us/products/cloudsurfer-2"
+      - "https://www.on.com/en-us/products/cloudsurfer-2/#reviews"
+      - "https://www.hoka.com/en/us/mach-6"
+    key:
+      mentioned: [h6-b2, h6-b5, h6-b3]
+      pages:
+        - "https://on.com/en-us/products/cloudsurfer-2"
+        - "https://hoka.com/en/us/mach-6"
+  - id: a080
+    project: h6
+    provider: ai_overview
+    language: en
+    text: |
+      **Running shoes for beginners** should prioritize comfort and fit over technology. Experts recommend:
+      - Getting fitted in the afternoon, when feet are slightly larger
+      - Leaving about a thumb's width of space in front of the toes
+      - Choosing a **neutral shoe** unless you have a known overpronation issue
+      - Replacing shoes every 500–800 km
+
+      Many specialty running stores offer gait analysis and accept returns of shoes worn only on a treadmill.
+    citations:
+      - "https://www.runnersworld.com/beginner/a20812270/how-to-buy-running-shoes/"
+      - "https://www.brooksrunning.com/en_us/blog/shoe-fit-guide/"
+    key:
+      mentioned: []
+      pages:
+        - "https://runnersworld.com/beginner/a20812270/how-to-buy-running-shoes"
+        - "https://brooksrunning.com/en_us/blog/shoe-fit-guide"
+  - id: a081
+    project: h6
+    provider: chatgpt
+    language: en
+    text: |
+      Since you mentioned wide feet and plantar fasciitis, here's what I'd consider:
+
+      - **New Balance 880 (2E/4E widths)** – one of the few lines in true wide sizes.
+      - **Hoka Bondi 9 Wide** – lots of cushioning under the heel.
+      - **Brooks Ghost Max** – stable, wide platform.
+
+      I'd avoid most On models for now — they tend to run narrow and the firm ride isn't ideal for heel pain.
+    citations:
+      - "https://www.newbalance.com/pd/fresh-foam-x-880v15/M880V15-50000.html?dwvar_M880V15-50000_width=4E&utm_source=chatgpt.com"
+    key:
+      mentioned: [h6-b6, h6-b3, h6-b1, h6-b2]
+      pages:
+        - "https://newbalance.com/pd/fresh-foam-x-880v15/M880V15-50000.html?dwvar_M880V15-50000_width=4E"
+  - id: a082
+    project: h6
+    provider: claude
+    language: de
+    text: |
+      Für deinen ersten Halbmarathon im Frühjahr würde ich dir einen gut gedämpften Neutralschuh empfehlen. Der Asics Gel-Nimbus ist ein sicherer Kandidat, ebenso der Hoka Clifton.
+
+      On ist bei vielen gerade sehr beliebt, und die Schuhe sehen toll aus. Für lange, langsame Läufe empfinde ich die meisten On-Modelle aber als etwas zu straff. Wenn du sie trotzdem testen willst, probier den Cloudmonster – der ist deutlich weicher als die übrigen Modelle.
+    citations: []
+    key:
+      mentioned: [h6-b4, h6-b3, h6-b2]
+      pages: []
+  - id: a083
+    project: h6
+    provider: perplexity
+    language: en
+    text: |
+      Brooks Running and New Balance both dominate the US stability category [1]. Brooks says the Adrenaline GTS has been one of the best-selling running shoes in US specialty stores for years [2].
+
+      NB's answer is the 860, which uses a firmer medial post [3]. For runners who want a softer ride, the Saucony Guide is often recommended as an alternative [1].
+    citations:
+      - "https://runrepeat.com/guides/best-stability-running-shoes"
+      - "https://www.brooksrunning.com/en_us/adrenaline-gts-24/"
+      - "https://www.newbalance.com/pd/fresh-foam-x-860v14/"
+    key:
+      mentioned: [h6-b1, h6-b6, h6-b5]
+      pages:
+        - "https://runrepeat.com/guides/best-stability-running-shoes"
+        - "https://brooksrunning.com/en_us/adrenaline-gts-24"
+        - "https://newbalance.com/pd/fresh-foam-x-860v14"
+  - id: a084
+    project: h6
+    provider: gemini
+    language: en
+    text: |
+      🏃 Top picks for trail beginners:
+
+      - **hoka speedgoat 6** – grippy and cushioned, great for long trail days
+      - **saucony peregrine 15** – lighter, more ground feel
+      - **asics trabuco max** – max cushion for rocky terrain
+
+      👉 Size half up for long descents so your toes don't hit the front.
+    citations:
+      - "https://www.hoka.com/en/us/speedgoat-6"
+      - "https://emea.mizuno.com/eu/en-gb/trail-running/"
+      - "https://www.saucony.com/en/peregrine-15"
+    key:
+      mentioned: [h6-b3, h6-b5, h6-b4]
+      pages:
+        - "https://hoka.com/en/us/speedgoat-6"
+        - "https://emea.mizuno.com/eu/en-gb/trail-running"
+        - "https://saucony.com/en/peregrine-15"
+  - id: a085
+    project: h6
+    provider: ai_overview
+    language: de
+    text: |
+      Beliebte Laufschuhmarken sind **ASICS**, **Brooks**, **HOKA**, **New Balance** und **On**. Für Einsteiger werden häufig gut gedämpfte Neutralschuhe wie der ASICS Gel-Nimbus oder der Brooks Ghost empfohlen.
+    citations:
+      - "https://www.runnersworld.de/laufschuhe/beste-laufschuhe/"
+      - "https://m.runnersworld.de/laufschuhe/beste-laufschuhe"
+      - "https://www.asics.com/de/de-de/gel-nimbus-27/p/1011B958-001.html"
+    key:
+      mentioned: [h6-b4, h6-b1, h6-b3, h6-b6, h6-b2]
+      pages:
+        - "https://runnersworld.de/laufschuhe/beste-laufschuhe"
+        - "https://asics.com/de/de-de/gel-nimbus-27/p/1011B958-001.html"
+  - id: a086
+    project: h6
+    provider: chatgpt
+    language: en
+    text: |
+      Depends on what you're training for. Based on what you said — three runs a week, mostly on asphalt, aiming for a sub-50 10K:
+
+      | Use | Shoe |
+      |---|---|
+      | Easy runs | Hoka Clifton 10 |
+      | Tempo / intervals | Asics Magic Speed 4 |
+      | Race day | Saucony Endorphin Pro 4 |
+
+      You don't need a carbon-plated shoe to break 50 minutes, though. Focus on the plan first; the shoes are a bonus.
+    citations:
+      - "https://www.saucony.com/en/endorphin-pro-4/?srsltid=AfmBOooX9z"
+      - "https://www.hoka.com/en/us/clifton-10/#details"
+    key:
+      mentioned: [h6-b3, h6-b4, h6-b5]
+      pages:
+        - "https://saucony.com/en/endorphin-pro-4"
+        - "https://hoka.com/en/us/clifton-10"
+  - id: a087
+    project: h6
+    provider: claude
+    language: en
+    text: |
+      Honestly, at 40 km a week the brand matters much less than fit and how the shoe feels on your third run in it, not your first. A few things worth doing before you buy:
+
+      - Bring the socks you actually run in.
+      - Jog a few laps in the store or on a treadmill, not just a walk around.
+      - Pay attention to any pressure on the outside of your little toe; that rarely goes away with break-in.
+
+      If your current shoes have served you well, the simplest move is to buy the newest version of the same model and check the reviews for changes in fit.
+    citations: []
+    key:
+      mentioned: []
+      pages: []
+  - id: a088
+    project: h6
+    provider: perplexity
+    language: de
+    text: |
+      Laut aktuellen Testberichten ist der Hoka Bondi einer der am stärksten gedämpften Laufschuhe auf dem Markt [1]. Für Läufer mit Knieproblemen wird außerdem der Mizuno Wave Sky empfohlen [2].
+
+      Vom Saucony Endorphin Speed raten Tester bei Knieproblemen eher ab, da Nylonplatte und geringe Stabilität für langsame Läufe nicht ideal sind [3].
+    citations:
+      - "https://www.runnersworld.de/laufschuhe/hoka-bondi-test/"
+      - "https://www.laufschuhe-test.net/mizuno-wave-sky/?ref=perplexity"
+      - "https://www.runningwarehouse.de/blog/carbon-schuhe-knie/"
+    key:
+      mentioned: [h6-b3, h6-b7, h6-b5]
+      pages:
+        - "https://runnersworld.de/laufschuhe/hoka-bondi-test"
+        - "https://laufschuhe-test.net/mizuno-wave-sky"
+        - "https://runningwarehouse.de/blog/carbon-schuhe-knie"
+  - id: a089
+    project: h6
+    provider: gemini
+    language: en
+    text: |
+      **Short answer:** for heavier runners (90 kg+), prioritize a wide base and durable foam.
+
+      On the cushioning side, the Hoka Bondi and the Brooks Glycerin are the most commonly recommended options.
+
+      On Running's Cloudmonster is popular too, but some heavier runners report the outsole wearing quickly.
+
+      **Tip:** replace your shoes earlier than the usual 800 km if you notice the midsole creasing.
+    citations:
+      - "https://www.brooksrunning.com/en_us/glycerin-22/"
+      - "https://www.on.com/en-us/products/cloudmonster-2"
+    key:
+      mentioned: [h6-b3, h6-b1, h6-b2]
+      pages:
+        - "https://brooksrunning.com/en_us/glycerin-22"
+        - "https://on.com/en-us/products/cloudmonster-2"
+  - id: a090
+    project: h6
+    provider: ai_overview
+    language: en
+    text: |
+      **Brooks** is often rated the best running shoe brand for beginners because of its comfortable, durable neutral and stability models. Other top-rated brands include **Hoka** for maximal cushioning, **Asics** for stability and **On** for lightweight, responsive shoes.
+    citations:
+      - "https://www.brooksrunning.com/en_us/"
+      - "https://brooksrunning.com/en_us?utm_source=google"
+      - "https://www.outdoorgearlab.com/topics/shoes-and-boots/best-running-shoes"
+    key:
+      mentioned: [h6-b1, h6-b3, h6-b4, h6-b2]
+      pages:
+        - "https://brooksrunning.com/en_us"
+        - "https://outdoorgearlab.com/topics/shoes-and-boots/best-running-shoes"
+  - id: a091
+    project: h7
+    provider: chatgpt
+    language: de
+    text: |
+      Kostenlose Girokonten ohne Bedingungen (Stand: Herbst 2026, Konditionen können sich ändern):
+
+      1. **N26 Standard** – komplett per App, schnelle Kontoeröffnung, kostenlose Debitkarte.
+      2. **C24 Smart** – kostenlos, Zinsen auf Pockets.
+      3. **Trade Republic** – Girokonto mit Karte, Zinsen auf das Guthaben und Saveback.
+      4. **DKB** – kostenloses Konto, zusätzliche Vorteile als Aktivkunde mit regelmäßigem Geldeingang.
+
+      Achte auch darauf, wie oft du Bargeld brauchst – die Zahl der kostenlosen Abhebungen ist oft begrenzt.
+    citations:
+      - "https://n26.com/de-de/kostenloses-girokonto?utm_source=chatgpt.com"
+      - "https://www.c24.de/konto/?utm_source=chatgpt.com"
+      - "https://traderepublic.com/de-de/karte"
+    key:
+      mentioned: [h7-b1, h7-b5, h7-b6, h7-b2]
+      pages:
+        - "https://n26.com/de-de/kostenloses-girokonto"
+        - "https://c24.de/konto"
+        - "https://traderepublic.com/de-de/karte"
+  - id: a092
+    project: h7
+    provider: claude
+    language: de
+    text: |
+      Wenn dir Nachhaltigkeit wichtig ist, ist Tomorrow eine interessante Wahl: Die Bank finanziert nach eigenen Angaben Klimaschutzprojekte und legt die Einlagen nach ökologischen Kriterien an. Das Konto kostet allerdings eine monatliche Gebühr.
+
+      Von Trade Republic als Hauptkonto würde ich dir in deinem Fall abraten. Für Gehaltseingang, Daueraufträge und Lastschriften funktioniert es zwar, aber du hast gesagt, dass du regelmäßig Bargeld einzahlst – das geht dort nicht.
+    citations: []
+    key:
+      mentioned: [h7-b7, h7-b6]
+      pages: []
+  - id: a093
+    project: h7
+    provider: perplexity
+    language: de
+    text: |
+      Laut Finanztip und Stiftung Warentest gibt es weiterhin mehrere Girokonten ohne Kontoführungsgebühr [1][2]:
+
+      | Bank | Kontoführung | Bedingung | Girocard |
+      |---|---|---|---|
+      | N26 | 0 € | keine | nein |
+      | C24 | 0 € | keine | ja (gegen Gebühr) |
+      | ING | 0 € | ab 700 € Geldeingang | ja |
+      | comdirect | 0 € | Geldeingang oder aktive Nutzung | ja |
+
+      Die Gebühren für die Girocard und für Bargeldabhebungen unterscheiden sich deutlich [2][3].
+    citations:
+      - "https://www.finanztip.de/girokonto/"
+      - "https://www.test.de/Girokonto-Test-4776988-0/"
+      - "https://www.test.de/Girokonto-Test-4776988-0/#kosten"
+      - "https://www.biallo.de/girokonto/girocard-gebuehren/"
+    key:
+      mentioned: [h7-b1, h7-b5, h7-b3, h7-b4]
+      pages:
+        - "https://finanztip.de/girokonto"
+        - "https://test.de/Girokonto-Test-4776988-0"
+        - "https://biallo.de/girokonto/girocard-gebuehren"
+  - id: a094
+    project: h7
+    provider: gemini
+    language: en
+    text: |
+      ## Sustainable banking options in Germany
+
+      **Tomorrow** is a Hamburg-based mobile bank that invests customer deposits in line with climate goals. Tomorrow's accounts run on the infrastructure of Solaris, a licensed German bank.
+
+      If you open an account today and want your salary paid into it from next month, keep in mind that the identity check (VideoIdent) can still take until tomorrow or the day after.
+
+      **Other options:** ING and DKB are not "green banks" but offer free accounts with English-language apps.
+    citations:
+      - "https://www.tomorrow.one/en-DE/"
+      - "https://www.tomorrow.one/en-DE"
+      - "https://www.howtogermany.com/pages/banking.html"
+    key:
+      mentioned: [h7-b7, h7-b3, h7-b2]
+      pages:
+        - "https://tomorrow.one/en-DE"
+        - "https://howtogermany.com/pages/banking.html"
+  - id: a095
+    project: h7
+    provider: ai_overview
+    language: de
+    text: |
+      Ein **kostenloses Girokonto** bieten in Deutschland vor allem **Direktbanken und Neobanken**. Häufig ist die kostenlose Kontoführung allerdings an einen **monatlichen Mindestgeldeingang** geknüpft, etwa 700 Euro. Kosten können außerdem für die **Girocard**, Bargeldabhebungen oder beleghafte Überweisungen entstehen.
+    citations:
+      - "https://www.finanztip.de/girokonto/kostenloses-girokonto/"
+      - "https://www.dkb.de/info/girokonto-vergleich?srsltid=AfmBOopQ7v"
+      - "https://www.n26.com/de-de/blog/kostenloses-girokonto"
+    key:
+      mentioned: []
+      pages:
+        - "https://finanztip.de/girokonto/kostenloses-girokonto"
+        - "https://dkb.de/info/girokonto-vergleich"
+        - "https://n26.com/de-de/blog/kostenloses-girokonto"
+  - id: a096
+    project: h7
+    provider: chatgpt
+    language: de
+    text: |
+      Beide Konten sind für Studierende gut geeignet, aber mit unterschiedlichen Stärken:
+
+      **DKB:** Bei der DKB bekommst du eine Visa-Debitkarte, mit der du als Aktivkunde weltweit kostenlos Geld abheben kannst. Die Girocard kostet extra.
+
+      **N26:** N26s App gilt als eine der besten im Markt – Spaces (Unterkonten), Push-Benachrichtigungen in Echtzeit und eine sehr schnelle Kontoeröffnung. Bargeld abheben ist im Standardkonto aber nur wenige Male pro Monat kostenlos.
+
+      Wenn du viel reist: DKB. Wenn du vor allem per App zahlst: N26.
+    citations:
+      - "https://www.dkb.de/privatkunden/girokonto/?utm_source=chatgpt.com"
+      - "https://n26.com/de-de/spaces"
+    key:
+      mentioned: [h7-b2, h7-b1]
+      pages:
+        - "https://dkb.de/privatkunden/girokonto"
+        - "https://n26.com/de-de/spaces"
+  - id: a097
+    project: h7
+    provider: claude
+    language: de
+    text: |
+      Ein Bankwechsel ist heute deutlich einfacher als früher. Seit 2016 ist deine bisherige Bank gesetzlich verpflichtet, beim Kontowechsel zu helfen: Daueraufträge, Lastschriften und Zahlungseingänge können innerhalb von etwa zwei Wochen übertragen werden.
+
+      Praktisch läuft das so: Du eröffnest das neue Konto, beauftragst dort den Kontowechselservice und wählst aus, welche Zahlungspartner informiert werden sollen. Das alte Konto würde ich noch ein, zwei Monate parallel laufen lassen, falls jemand die neue IBAN übersehen hat.
+    citations: []
+    key:
+      mentioned: []
+      pages: []
+  - id: a098
+    project: h7
+    provider: perplexity
+    language: en
+    text: |
+      Vivid Money is a Berlin-based neobank that combines a current account with investing features [1]. Vivid offers interest on cash balances and a broker for stocks and ETFs [2].
+
+      Reviews paint a vivid picture of the trade-offs: the app is feature-rich, but some users find the many pockets and offers confusing [3].
+
+      Compared with Trade Republic, its interest rates are similar, but Trade Republic does not offer sub-accounts [2].
+    citations:
+      - "https://vivid.money/de-de/"
+      - "https://vivid.money/en-de/pricing/?ref=perplexity"
+      - "https://www.trustpilot.com/review/vivid.money"
+    key:
+      mentioned: [h7-b8, h7-b6]
+      pages:
+        - "https://vivid.money/de-de"
+        - "https://vivid.money/en-de/pricing"
+        - "https://trustpilot.com/review/vivid.money"
+  - id: a099
+    project: h7
+    provider: gemini
+    language: de
+    text: |
+      ## Girokonto mit Depot
+
+      Wenn du Konto und Depot bei einer Bank haben möchtest, sind diese Optionen beliebt:
+
+      * **comdirect** – Konto, Depot und Tagesgeld aus einer Hand; Sparpläne oft schon ab 1 €.
+      * **ING-DiBa** (heute nur noch **ING**) – kostenloses Depot mit vielen ETF-Sparplänen.
+      * **Deutsche Kreditbank (DKB)** – solide Allround-Bank mit günstigem Depot.
+
+      Prüfe die Ordergebühren, wenn du häufig Einzelaktien kaufst.
+    citations:
+      - "https://www.comdirect.de/konto/"
+      - "https://www.ing.de/wertpapiere/direkt-depot/"
+      - "https://m.ing.de/wertpapiere/direkt-depot"
+    key:
+      mentioned: [h7-b4, h7-b3, h7-b2]
+      pages:
+        - "https://comdirect.de/konto"
+        - "https://ing.de/wertpapiere/direkt-depot"
+  - id: a100
+    project: h7
+    provider: ai_overview
+    language: de
+    text: |
+      **N26**, **C24** und **Trade Republic** bieten ein Girokonto ohne Kontoführungsgebühr und ohne Mindestgeldeingang. Bei **ING** und **Comdirect** ist das Konto meist nur mit einem regelmäßigen Geldeingang kostenlos.
+    citations:
+      - "https://www.finanztip.de/girokonto/"
+      - "https://www.finanztip.de/girokonto/?utm_source=google&utm_medium=organic#vergleich"
+      - "https://www.c24.de/konto/"
+    key:
+      mentioned: [h7-b1, h7-b5, h7-b6, h7-b3, h7-b4]
+      pages:
+        - "https://finanztip.de/girokonto"
+        - "https://c24.de/konto"
+  - id: a101
+    project: h7
+    provider: chatgpt
+    language: en
+    text: |
+      Good news: as an expat you can open an account at most German online banks with a passport and a registered address (Anmeldung).
+
+      **Best English-friendly options:**
+      - **N26** – app and support fully in English.
+      - **ING** – English app, but some documents only in German.
+      - **Vivid** – English app, quick sign-up.
+
+      **Probably skip:** C24 Bank, since much of the onboarding and support is German-only, which can be frustrating in your first months.
+
+      If you need the account by tomorrow, N26 is usually the fastest — video verification takes a few minutes.
+    citations:
+      - "https://n26.com/en-de?utm_source=chatgpt.com"
+      - "https://www.ing.de/english/"
+      - "https://vivid.money/en-de/"
+    key:
+      mentioned: [h7-b1, h7-b3, h7-b8, h7-b5]
+      pages:
+        - "https://n26.com/en-de"
+        - "https://ing.de/english"
+        - "https://vivid.money/en-de"
+  - id: a102
+    project: h7
+    provider: claude
+    language: de
+    text: |
+      Die Zinsen auf dem Verrechnungskonto sind bei Trade Republic ein echtes Argument, aber sie sind an den EZB-Leitzins gekoppelt und können sinken. Trade Republics Karte ist außerdem eine Visa-Debitkarte; eine Girocard gibt es dort nicht.
+
+      Bei C24 bekommst du ein klassischeres Girokonto mit Unterkonten ("Pockets") und optionaler Girocard. Wenn du nur ein Konto führen möchtest und regelmäßig Lastschriften von Versicherungen und Vermietern hast, ist das oft entspannter.
+    citations: []
+    key:
+      mentioned: [h7-b6, h7-b5]
+      pages: []
+  - id: a103
+    project: h7
+    provider: perplexity
+    language: de
+    text: |
+      Laut einem Vergleich von Biallo bieten derzeit mehrere Banken Zinsen auf das Girokonto oder auf verknüpfte Tagesgeldkonten [1][2]. Bei der ING gibt es für Neukunden häufig einen Aktionszins auf das Extra-Konto [3].
+
+      Neobanken zahlen teils Zinsen direkt auf das Girokonto-Guthaben, allerdings oft nur bis zu einer bestimmten Obergrenze [2].
+    citations:
+      - "https://www.biallo.de/tagesgeld/zinsen-girokonto/"
+      - "https://vivid.money/de-de/zinsen/"
+      - "https://www.ing.de/sparen/extra-konto/?utm_campaign=neukunden"
+    key:
+      mentioned: [h7-b3]
+      pages:
+        - "https://biallo.de/tagesgeld/zinsen-girokonto"
+        - "https://vivid.money/de-de/zinsen"
+        - "https://ing.de/sparen/extra-konto"
+  - id: a104
+    project: h7
+    provider: gemini
+    language: en
+    text: |
+      Here's a quick overview for students:
+
+      | Bank | Monthly fee | Cash withdrawals | English app |
+      |---|---|---|---|
+      | N26 | €0 | 3 free per month | Yes |
+      | DKB | €0 | free worldwide with Visa (active customers) | Yes |
+      | Trade Republic | €0 | free from €100 | Yes |
+
+      **My pick:** N26 if you mostly pay by card; Trade Republic if you also want to start investing.
+    citations:
+      - "https://n26.com/en-de/free-bank-account"
+      - "https://www.dkb.de/privatkunden/girokonto-fuer-junge-leute/"
+    key:
+      mentioned: [h7-b1, h7-b2, h7-b6]
+      pages:
+        - "https://n26.com/en-de/free-bank-account"
+        - "https://dkb.de/privatkunden/girokonto-fuer-junge-leute"
+  - id: a105
+    project: h7
+    provider: ai_overview
+    language: de
+    text: |
+      Tomorrow und Vivid Money gehören zu den bekannteren Neobanken in Deutschland. Tomorrow richtet sich an nachhaltig orientierte Kunden, während Vivid vor allem Zinsen und Investmentfunktionen bietet.
+    citations:
+      - "https://www.tomorrow.one/de-DE/"
+      - "https://vivid.money/de-de/"
+      - "https://vivid.money/de-de/#features"
+    key:
+      mentioned: [h7-b7, h7-b8]
+      pages:
+        - "https://tomorrow.one/de-DE"
+        - "https://vivid.money/de-de"
+  - id: a106
+    project: h8
+    provider: chatgpt
+    language: en
+    text: |
+      For a 5-person B2B sales team, I'd shortlist:
+
+      1. **Pipedrive** – pipeline-first, very intuitive; reps actually use it.
+      2. **HubSpot CRM** – free core CRM, scales into marketing and service hubs.
+      3. **Zoho CRM** – lots of features for the price, steeper learning curve.
+      4. **Close** – built-in calling and email sequences; great for outbound-heavy teams.
+
+      If you send a lot of cold email and make lots of calls, Close saves you a separate dialer. Otherwise, start with Pipedrive.
+    citations:
+      - "https://www.pipedrive.com/en/pricing?utm_source=chatgpt.com"
+      - "https://www.hubspot.com/products/crm?utm_source=chatgpt.com"
+      - "https://close.com/?utm_source=chatgpt.com"
+    key:
+      mentioned: [h8-b2, h8-b1, h8-b4, h8-b7]
+      pages:
+        - "https://pipedrive.com/en/pricing"
+        - "https://hubspot.com/products/crm"
+        - "https://close.com"
+  - id: a107
+    project: h8
+    provider: claude
+    language: de
+    text: |
+      Für ein Team von drei Leuten würde ich Salesforce ehrlich gesagt nicht empfehlen. Es ist extrem mächtig, aber die Einrichtung frisst Zeit, und ohne Admin wird es schnell unübersichtlich – selbst in der Starter-Edition.
+
+      Besser passt in eurer Größe Pipedrive oder das kostenlose CRM von HubSpot. Wenn ihr ohnehin Google Workspace nutzt, lohnt sich auch ein Blick auf Copper, das direkt in Gmail integriert ist.
+    citations: []
+    key:
+      mentioned: [h8-b3, h8-b2, h8-b1, h8-b6]
+      pages: []
+  - id: a108
+    project: h8
+    provider: perplexity
+    language: en
+    text: |
+      Copper is a CRM built around Google Workspace: contacts, emails and calendar events from Gmail sync automatically [1]. Copper is popular with agencies and consultancies that live in their inbox [2].
+
+      For your electrical contracting business, though, keep in mind that a CRM won't track materials: if your quotes depend on daily copper and cable prices, you'll still need a separate quoting or inventory tool. CRMs with stronger quoting features include Zoho CRM and Pipedrive (via its Products add-on) [3].
+    citations:
+      - "https://www.copper.com/google-workspace-crm"
+      - "https://www.techradar.com/best/best-crm-software"
+      - "https://www.pipedrive.com/en/features/products#quotes"
+    key:
+      mentioned: [h8-b6, h8-b4, h8-b2]
+      pages:
+        - "https://copper.com/google-workspace-crm"
+        - "https://techradar.com/best/best-crm-software"
+        - "https://pipedrive.com/en/features/products"
+  - id: a109
+    project: h8
+    provider: gemini
+    language: en
+    text: |
+      ### CRM pricing at a glance (per user/month, billed annually)
+
+      HubSpot offers the most generous free plan, while Pipedrive is the most affordable paid option for small teams.
+
+      | CRM | Free plan | Entry price | Best for |
+      |---|---|---|---|
+      | HubSpot | Yes | ~$15–20 | Inbound marketing |
+      | Pipedrive | No | ~$14 | Pipeline management |
+      | Freshsales | Yes (up to 3 users) | ~$9 | Budget teams |
+      | Copper | No | ~$9–12 | Google Workspace users |
+
+      Prices change frequently; check each vendor's site.
+    citations:
+      - "https://www.hubspot.com/pricing/crm"
+      - "https://www.pipedrive.com/en/pricing/"
+      - "https://www.freshworks.com/crm/pricing/"
+    key:
+      mentioned: [h8-b1, h8-b2, h8-b5, h8-b6]
+      pages:
+        - "https://hubspot.com/pricing/crm"
+        - "https://pipedrive.com/en/pricing"
+        - "https://freshworks.com/crm/pricing"
+  - id: a110
+    project: h8
+    provider: ai_overview
+    language: en
+    text: |
+      A **CRM (customer relationship management) system** helps small businesses store customer data, track sales opportunities and automate follow-ups. Key features to look for include:
+      - **Contact and deal management**
+      - **Email integration** and activity tracking
+      - **Pipeline reporting**
+      - **Mobile access**
+
+      Small businesses should weigh ease of use and total cost, including add-ons, more heavily than the length of the feature list.
+    citations:
+      - "https://www.salesforce.com/uk/crm/what-is-crm/"
+      - "https://www.zoho.com/crm/what-is-crm.html?gclid=Cj0KCQiA4L2B&utm_source=google"
+      - "https://www.salesforce.com/uk/crm/what-is-crm"
+    key:
+      mentioned: []
+      pages:
+        - "https://salesforce.com/uk/crm/what-is-crm"
+        - "https://zoho.com/crm/what-is-crm.html"
+  - id: a111
+    project: h8
+    provider: chatgpt
+    language: de
+    text: |
+      Für ein kleines Handwerksunternehmen mit Außendienst würde ich mir zwei Systeme anschauen:
+
+      - **Zoho CRM**: günstig, Datenhaltung in EU-Rechenzentren möglich, gute mobile App für Termine vor Ort.
+      - **HubSpot**: HubSpots kostenloses CRM reicht für den Start, die Kosten steigen aber stark, wenn du Marketing-Automatisierung brauchst.
+
+      Wichtig für Deutschland: Schließe mit dem Anbieter einen Auftragsverarbeitungsvertrag (AVV) ab.
+    citations:
+      - "https://www.zoho.com/de/crm/?utm_source=chatgpt.com"
+      - "https://www.hubspot.de/products/crm"
+    key:
+      mentioned: [h8-b4, h8-b1]
+      pages:
+        - "https://zoho.com/de/crm"
+        - "https://hubspot.de/products/crm"
+  - id: a112
+    project: h8
+    provider: claude
+    language: en
+    text: |
+      Close is the one I'd look at first for your use case. You described a team of four SDRs making 80+ calls a day — Close has a built-in power dialer, call recording and email sequences, so you wouldn't need a separate calling tool.
+
+      To close more deals, though, the tool matters less than follow-up discipline. Whatever CRM you pick, set a rule that every call gets a next step logged before the rep hangs up.
+
+      If budget is the main constraint, Pipedrive with a dialer integration gets you close, but it's clunkier.
+    citations: []
+    key:
+      mentioned: [h8-b7, h8-b2]
+      pages: []
+  - id: a113
+    project: h8
+    provider: perplexity
+    language: en
+    text: |
+      For startups expecting rapid growth, HubSpot and Salesforce are the most frequently compared options [1][2].
+
+      - **HubSpot** is easier to set up and has a free tier, but costs rise sharply in the Professional tiers [2].
+      - **Salesforce** Starter Suite offers a simplified version of its enterprise CRM, with more customization headroom [3].
+
+      Several reviewers advise against Zoho CRM for teams planning to integrate many third-party tools, citing a less extensive app marketplace [1].
+    citations:
+      - "https://www.forbes.com/advisor/business/software/hubspot-vs-salesforce/"
+      - "https://www.g2.com/compare/hubspot-sales-hub-vs-salesforce-salesforce-sales-cloud"
+      - "https://www.salesforce.com/uk/small-business/starter/?ref=perplexity.ai#pricing"
+    key:
+      mentioned: [h8-b1, h8-b3, h8-b4]
+      pages:
+        - "https://forbes.com/advisor/business/software/hubspot-vs-salesforce"
+        - "https://g2.com/compare/hubspot-sales-hub-vs-salesforce-salesforce-sales-cloud"
+        - "https://salesforce.com/uk/small-business/starter"
+  - id: a114
+    project: h8
+    provider: gemini
+    language: en
+    text: |
+      Top CRMs for solo founders ⚡
+
+      • hubspot (free) – contact management, email tracking, meetings link
+      • pipedrive – if you think in deals and stages
+      • zoho – best value if you need more automation
+
+      Bonus tip: connect your CRM to your calendar so every meeting automatically creates an activity.
+    citations:
+      - "https://www.hubspot.com/products/crm/free"
+      - "https://www.copper.com/blog/crm-for-solopreneurs/"
+      - "https://www.zoho.com/crm/"
+    key:
+      mentioned: [h8-b1, h8-b2, h8-b4]
+      pages:
+        - "https://hubspot.com/products/crm/free"
+        - "https://copper.com/blog/crm-for-solopreneurs"
+        - "https://zoho.com/crm"
+  - id: a115
+    project: h8
+    provider: ai_overview
+    language: en
+    text: |
+      **HubSpot CRM**, **Pipedrive** and **Zoho CRM** are among the most recommended CRMs for small businesses. Freshworks' **Freshsales** is a lower-cost alternative with a built-in phone and AI-based lead scoring.
+    citations:
+      - "https://www.hubspot.com/products/crm"
+      - "https://www.hubspot.com/products/crm/"
+      - "https://www.freshworks.com/crm/sales/"
+      - "https://www.pcmag.com/picks/the-best-crm-software"
+    key:
+      mentioned: [h8-b1, h8-b2, h8-b4, h8-b5]
+      pages:
+        - "https://hubspot.com/products/crm"
+        - "https://freshworks.com/crm/sales"
+        - "https://pcmag.com/picks/the-best-crm-software"
+  - id: a116
+    project: h8
+    provider: chatgpt
+    language: en
+    text: |
+      Here's how the main options compare for inside sales teams:
+
+      | | Pipedrive | Close | HubSpot Sales Hub |
+      |---|---|---|---|
+      | Built-in calling | Add-on | Yes | Yes (Starter+) |
+      | Email sequences | Yes | Yes | Yes |
+      | Free plan | No | No | Yes |
+
+      All three are close in price at the entry level, so the deciding factor is usually how much calling your reps do.
+    citations:
+      - "https://close.com/pricing/?utm_source=chatgpt.com"
+      - "https://www.pipedrive.com/en/products/sales/calling"
+    key:
+      mentioned: [h8-b2, h8-b7, h8-b1]
+      pages:
+        - "https://close.com/pricing"
+        - "https://pipedrive.com/en/products/sales/calling"
+  - id: a117
+    project: h8
+    provider: claude
+    language: de
+    text: |
+      Bevor ihr ein CRM auswählt, würde ich mit dem Vertriebsteam einen Nachmittag lang euren tatsächlichen Verkaufsprozess aufzeichnen: Wie kommt ein Lead rein, wer qualifiziert ihn, wann geht ein Angebot raus, wann ist ein Deal verloren?
+
+      Erst wenn diese Stufen klar sind, lohnt sich der Vergleich von Anbietern. Sonst bildet man im neuen System nur das bestehende Chaos ab – und die Lizenzkosten laufen trotzdem.
+
+      Ein zweiter Punkt: Klärt früh, wer intern für die Datenpflege verantwortlich ist. Ein CRM ist nur so gut wie die Daten darin.
+    citations: []
+    key:
+      mentioned: []
+      pages: []
+  - id: a118
+    project: h8
+    provider: perplexity
+    language: en
+    text: |
+      If your company uses Microsoft 365 and Outlook, Zoho CRM, HubSpot and Pipedrive all offer Outlook add-ins with email and calendar sync [1][2].
+
+      Copper CRM is not recommended for Microsoft-based teams, as it is designed primarily for Google Workspace and offers no native Outlook integration [3].
+    citations:
+      - "https://www.zoho.com/crm/outlook-integration.html"
+      - "https://appsource.microsoft.com/en-us/product/office/WA104379590?tab=Overview"
+      - "https://www.copper.com/faq#outlook"
+    key:
+      mentioned: [h8-b4, h8-b1, h8-b2, h8-b6]
+      pages:
+        - "https://zoho.com/crm/outlook-integration.html"
+        - "https://appsource.microsoft.com/en-us/product/office/WA104379590?tab=Overview"
+        - "https://copper.com/faq"
+  - id: a119
+    project: h8
+    provider: gemini
+    language: de
+    text: |
+      ## CRM mit Telefonie für kleine Vertriebsteams
+
+      **Close.com** – Telefonie, SMS und E-Mail-Sequenzen in einem Tool. Close eignet sich besonders für Teams, die viel Kaltakquise machen.
+
+      **Freshsales** – integriertes Telefon und KI-gestütztes Lead-Scoring zu einem niedrigen Preis.
+
+      **Pipedrive** – Telefonie über die Funktion "Caller" (Zusatzkosten), dafür eine sehr übersichtliche Pipeline.
+    citations:
+      - "https://close.com/de/"
+      - "https://www.freshworks.com/de/crm/sales/"
+      - "https://www.pipedrive.com/de/features/caller"
+    key:
+      mentioned: [h8-b7, h8-b5, h8-b2]
+      pages:
+        - "https://close.com/de"
+        - "https://freshworks.com/de/crm/sales"
+        - "https://pipedrive.com/de/features/caller"
+  - id: a120
+    project: h8
+    provider: ai_overview
+    language: en
+    text: |
+      **Salesforce** is the largest CRM vendor worldwide, but for small businesses, analysts usually point to simpler tools such as **HubSpot**, **Pipedrive** or **Freshsales**. Salesforce Starter is the company's entry-level option for small teams.
+    citations:
+      - "https://www.salesforce.com/uk/small-business/"
+      - "https://www.gartner.com/en/newsroom/press-releases/crm-market-share"
+      - "https://www.salesforce.com/uk/small-business/?utm_source=google&utm_medium=sge"
+    key:
+      mentioned: [h8-b3, h8-b1, h8-b2, h8-b5]
+      pages:
+        - "https://salesforce.com/uk/small-business"
+        - "https://gartner.com/en/newsroom/press-releases/crm-market-share"

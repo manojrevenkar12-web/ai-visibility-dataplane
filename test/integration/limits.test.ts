@@ -88,12 +88,13 @@ test("cost budget: concurrent reservations never exceed the ceiling", async () =
   expect(await b.reserve("p", "2026-10-24", 0.01, 0.5, "late", 10_000)).toBe(false);
 });
 
-test("cost budget: a crashed worker's reservation expires", async () => {
+test("cost budget: a crashed worker's reservation expires into spent (it may have been billed)", async () => {
   const b = new CostBudget(r);
-  expect(await b.reserve("p", "d", 0.4, 0.5, "dead", 100)).toBe(true);
-  expect(await b.reserve("p", "d", 0.4, 0.5, "x", 100)).toBe(false);
+  expect(await b.reserve("p", "d", 0.2, 0.5, "dead", 100)).toBe(true);
   await Bun.sleep(120);
-  expect(await b.reserve("p", "d", 0.4, 0.5, "x", 100)).toBe(true);
+  expect(await b.reserve("p", "d", 0.2, 0.5, "x", 100)).toBe(true); // triggers the expiry
+  expect(await b.spent("p", "d")).toBeCloseTo(0.2, 6);
+  expect(await b.reserve("p", "d", 0.2, 0.5, "y", 100)).toBe(false); // 0.2 spent + 0.2 held + 0.2 > 0.5
 });
 
 test("fenced lock: a deposed holder's write is refused", async () => {

@@ -2,16 +2,22 @@
 //
 // Before a provider call the worker reserves the call's cost; the reservation and the check are one
 // Lua call against `spent + reserved`. After the call it settles: the reservation is released and the
-// actual cost is added (a provider that bills failed calls is charged too). Reservations carry an
-// expiry so a crashed worker's hold is released. Check-then-spend without the reservation overruns
+// actual cost is added (a provider that bills failed calls is charged too). A reservation that is
+// never settled (the worker died) expires into spent, because the call may have been billed. Check-then-spend without the reservation overruns
 // under concurrency; the drills measure by how much.
 import type Redis from "ioredis";
 
 const RESERVE = `
 -- KEYS: spent, holds ; ARGV: now, amount_micros, ceiling_micros, holder, ttl_ms
 local now = tonumber(ARGV[1])
+-- a reservation nobody settled belongs to a worker that died, possibly after the provider billed
+-- the call: count it as spent (never under-count); a call that never happened costs only headroom
 local expired = redis.call('ZRANGEBYSCORE', KEYS[2], '-inf', now)
-for _, h in ipairs(expired) do redis.call('ZREM', KEYS[2], h); redis.call('HDEL', KEYS[2] .. ':amt', h) end
+for _, h in ipairs(expired) do
+  local amt = tonumber(redis.call('HGET', KEYS[2] .. ':amt', h) or '0')
+  redis.call('INCRBY', KEYS[1], amt)
+  redis.call('ZREM', KEYS[2], h); redis.call('HDEL', KEYS[2] .. ':amt', h)
+end
 local held = 0
 for _, v in ipairs(redis.call('HVALS', KEYS[2] .. ':amt')) do held = held + tonumber(v) end
 local spent = tonumber(redis.call('GET', KEYS[1]) or '0')
