@@ -89,7 +89,14 @@ export async function runNaive(
         continue;
       }
       if (opts.crashAfterCallRate && Math.random() < opts.crashAfterCallRate) continue; // died holding the job: it is gone
-      await ch.insert("naive_answers", [{ run_id: j.runId, project_id: j.project, provider: j.provider }]);
+      for (let i = 0; i < 3; i++) {
+        try {
+          await ch.insert("naive_answers", [{ run_id: j.runId, project_id: j.project, provider: j.provider }]);
+          break;
+        } catch {
+          await Bun.sleep(100); // retried on error, as the naive worker does
+        }
+      }
       // the insert landed but the client saw a timeout, so it inserted again
       if (opts.insertRetryDuplicateRate && Math.random() < opts.insertRetryDuplicateRate)
         await ch.insert("naive_answers", [{ run_id: j.runId, project_id: j.project, provider: j.provider }]);

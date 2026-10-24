@@ -1,0 +1,162 @@
+{
+ "set": "v1",
+ "ran_at": "2026-10-24T08:46:41.184Z",
+ "answers": 120,
+ "mentions": {
+  "precision": 1,
+  "recall": 0.9852,
+  "tp": 332,
+  "fp": 0,
+  "fn": 5,
+  "order_exact": 0.9901,
+  "by_language": {
+   "de": {
+    "tp": 161,
+    "fp": 0,
+    "fn": 1
+   },
+   "en": {
+    "tp": 171,
+    "fp": 0,
+    "fn": 4
+   }
+  }
+ },
+ "pages": {
+  "precision": 0.9828,
+  "recall": 0.9828,
+  "tp": 228,
+  "fp": 4,
+  "fn": 4
+ },
+ "errors": [
+  {
+   "id": "a007",
+   "provider": "claude",
+   "language": "en",
+   "missed": [
+    "h1-b4"
+   ],
+   "extra": [],
+   "pages_missed": [],
+   "pages_extra": []
+  },
+  {
+   "id": "a016",
+   "provider": "chatgpt",
+   "language": "en",
+   "missed": [
+    "h2-b5"
+   ],
+   "extra": [],
+   "pages_missed": [],
+   "pages_extra": []
+  },
+  {
+   "id": "a018",
+   "provider": "perplexity",
+   "language": "en",
+   "missed": [],
+   "extra": [],
+   "pages_missed": [
+    "https://forbes.com/advisor/business/software/best-project-management-software/amp"
+   ],
+   "pages_extra": [
+    "https://forbes.com/advisor/business/software/best-project-management-software"
+   ]
+  },
+  {
+   "id": "a028",
+   "provider": "perplexity",
+   "language": "de",
+   "missed": [],
+   "extra": [],
+   "pages_missed": [
+    "https://t3n.de/news/projektmanagement-tools-agenturen-vergleich-1612345/amp"
+   ],
+   "pages_extra": [
+    "https://t3n.de/news/projektmanagement-tools-agenturen-vergleich-1612345"
+   ]
+  },
+  {
+   "id": "a043",
+   "provider": "perplexity",
+   "language": "de",
+   "missed": [],
+   "extra": [],
+   "pages_missed": [
+    "https://ebike-news.de/drehmoment-erklaert/amp"
+   ],
+   "pages_extra": [
+    "https://ebike-news.de/drehmoment-erklaert"
+   ]
+  },
+  {
+   "id": "a047",
+   "provider": "claude",
+   "language": "en",
+   "missed": [
+    "h4-b4"
+   ],
+   "extra": [],
+   "pages_missed": [],
+   "pages_extra": []
+  },
+  {
+   "id": "a066",
+   "provider": "chatgpt",
+   "language": "de",
+   "missed": [
+    "h5-b1"
+   ],
+   "extra": [],
+   "pages_missed": [],
+   "pages_extra": []
+  },
+  {
+   "id": "a077",
+   "provider": "claude",
+   "language": "en",
+   "missed": [
+    "h6-b1"
+   ],
+   "extra": [],
+   "pages_missed": [],
+   "pages_extra": []
+  },
+  {
+   "id": "a078",
+   "provider": "perplexity",
+   "language": "de",
+   "missed": [],
+   "extra": [],
+   "pages_missed": [
+    "https://runnersworld.de/laufschuhe/stabilitaetsschuhe-test/amp"
+   ],
+   "pages_extra": [
+    "https://runnersworld.de/laufschuhe/stabilitaetsschuhe-test"
+   ]
+  },
+  {
+   "id": "a089",
+   "provider": "gemini",
+   "language": "en",
+   "missed": [],
+   "extra": [],
+   "order": {
+    "want": [
+     "h6-b3",
+     "h6-b1",
+     "h6-b2"
+    ],
+    "got": [
+     "h6-b2",
+     "h6-b3",
+     "h6-b1"
+    ]
+   },
+   "pages_missed": [],
+   "pages_extra": []
+  }
+ ]
+}

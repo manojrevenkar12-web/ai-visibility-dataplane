@@ -139,7 +139,7 @@
   },
   "baseline": {}
  },
- "seconds": 72.944,
+ "seconds": 72.456,
  "workerRestarts": 0,
  "timedOut": false,
  "measures": {
@@ -157,14 +157,7 @@
    "distinct_runs": 3000
   },
   "providers": {
-   "gemini": {
-    "requests": 600,
-    "per_run": 1,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 600
-   },
-   "perplexity": {
+   "anthropic": {
     "requests": 600,
     "per_run": 1,
     "over_limit_429": 0,
@@ -178,14 +171,21 @@
     "during_outage": 0,
     "ok": 600
    },
-   "openai": {
-    "requests": 706,
-    "per_run": 1.1767,
-    "over_limit_429": 106,
+   "gemini": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
     "during_outage": 0,
     "ok": 600
    },
-   "anthropic": {
+   "openai": {
+    "requests": 701,
+    "per_run": 1.1683,
+    "over_limit_429": 101,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "perplexity": {
     "requests": 600,
     "per_run": 1,
     "over_limit_429": 0,
@@ -208,9 +208,9 @@
    "runs_scored": 3000
   },
   "freshness_s": {
-   "p50": 14.5682,
-   "p95": 40.2228,
-   "max": 72.722
+   "p50": 14.5313,
+   "p95": 39.6417,
+   "max": 72.3275
   },
   "webhooks": {
    "events": 3000,
@@ -227,45 +227,45 @@
  },
  "baseline": {
   "runs": 3000,
-  "stored_runs": 1717,
+  "stored_runs": 1653,
   "lost": 0,
   "duplicate_rows": 0,
-  "failed": 1283,
+  "failed": 1347,
   "skipped_budget": 0,
   "providers": {
    "openai": {
-    "requests": 1506,
-    "per_run": 2.51,
-    "over_limit_429": 1295,
+    "requests": 1535,
+    "per_run": 2.5583,
+    "over_limit_429": 1336,
     "during_outage": 0
    },
    "anthropic": {
-    "requests": 1211,
-    "per_run": 2.0183,
-    "over_limit_429": 852,
+    "requests": 1233,
+    "per_run": 2.055,
+    "over_limit_429": 886,
     "during_outage": 0
    },
    "perplexity": {
-    "requests": 1081,
-    "per_run": 1.8017,
-    "over_limit_429": 652,
+    "requests": 1121,
+    "per_run": 1.8683,
+    "over_limit_429": 706,
     "during_outage": 0
    },
    "gemini": {
-    "requests": 1087,
-    "per_run": 1.8117,
-    "over_limit_429": 657,
+    "requests": 1100,
+    "per_run": 1.8333,
+    "over_limit_429": 686,
     "during_outage": 0
    },
    "ai_overview": {
-    "requests": 1348,
-    "per_run": 2.2467,
-    "over_limit_429": 1060,
+    "requests": 1357,
+    "per_run": 2.2617,
+    "over_limit_429": 1079,
     "during_outage": 0
    }
   },
   "max_budget_overrun_eur": 0,
   "projects_over_budget": 0,
-  "seconds": 13.649
+  "seconds": 13.163
  }
 }

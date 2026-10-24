@@ -146,82 +146,84 @@
    "insertRetryDuplicateRate": 0.2
   }
  },
- "seconds": 240.019,
- "workerRestarts": 106,
- "timedOut": true,
+ "seconds": 62.215,
+ "workerRestarts": 88,
+ "timedOut": false,
  "measures": {
   "runs": {
    "expected": 3000,
-   "succeeded": 2921,
-   "failed": {},
+   "succeeded": 2999,
+   "failed": {
+    "unavailable": 1
+   },
    "skipped_budget": 0,
-   "not_finished": 79
+   "not_finished": 0
   },
   "analytics": {
    "succeeded_not_in_clickhouse": 0,
    "customer_visible_duplicates": 0,
-   "raw_rows_before_merge": 2927,
-   "distinct_runs": 2921
+   "raw_rows_before_merge": 2999,
+   "distinct_runs": 2999
   },
   "providers": {
    "gemini": {
-    "requests": 741,
-    "per_run": 1.235,
+    "requests": 732,
+    "per_run": 1.22,
     "over_limit_429": 0,
     "during_outage": 0,
-    "ok": 738
-   },
-   "anthropic": {
-    "requests": 761,
-    "per_run": 1.2683,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 757
-   },
-   "openai": {
-    "requests": 731,
-    "per_run": 1.2183,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 727
-   },
-   "ai_overview": {
-    "requests": 645,
-    "per_run": 1.075,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 641
+    "ok": 724
    },
    "perplexity": {
-    "requests": 747,
-    "per_run": 1.245,
+    "requests": 730,
+    "per_run": 1.2167,
     "over_limit_429": 0,
     "during_outage": 0,
-    "ok": 742
+    "ok": 726
+   },
+   "anthropic": {
+    "requests": 714,
+    "per_run": 1.19,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 710
+   },
+   "openai": {
+    "requests": 749,
+    "per_run": 1.2483,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 745
+   },
+   "ai_overview": {
+    "requests": 688,
+    "per_run": 1.1467,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 686
    }
   },
   "cost": {
-   "provider_billed_eur": 34.491,
-   "ledger_eur": 29.201,
+   "provider_billed_eur": 33.938,
+   "ledger_eur": 34.097,
    "max_budget_overrun_eur": 0,
    "projects_over_budget": 0
   },
   "extraction": {
    "mention_precision": 1,
-   "mention_recall": 0.9401,
-   "position_exact": 0.8846,
+   "mention_recall": 0.9395,
+   "position_exact": 0.8837,
    "citation_precision": 1,
    "citation_recall": 1,
-   "runs_scored": 2921
+   "runs_scored": 2999
   },
   "freshness_s": {
-   "p50": 30.0753,
-   "p95": 195.8615,
-   "max": 236.941
+   "p50": 33.4641,
+   "p95": 53.0999,
+   "max": 61.9487
   },
   "webhooks": {
-   "events": 2921,
-   "received_unique": 2921,
+   "events": 3000,
+   "received_unique": 3000,
    "missing": 0,
    "duplicate_deliveries": 0,
    "bad_signatures": 0,
@@ -234,45 +236,45 @@
  },
  "baseline": {
   "runs": 3000,
-  "stored_runs": 1803,
-  "lost": 48,
-  "duplicate_rows": 349,
-  "failed": 1149,
+  "stored_runs": 1936,
+  "lost": 50,
+  "duplicate_rows": 388,
+  "failed": 1014,
   "skipped_budget": 0,
   "providers": {
    "openai": {
-    "requests": 923,
-    "per_run": 1.5383,
-    "over_limit_429": 415,
+    "requests": 788,
+    "per_run": 1.3133,
+    "over_limit_429": 243,
     "during_outage": 0
    },
    "anthropic": {
-    "requests": 1275,
-    "per_run": 2.125,
-    "over_limit_429": 954,
+    "requests": 1217,
+    "per_run": 2.0283,
+    "over_limit_429": 873,
     "during_outage": 0
    },
    "perplexity": {
-    "requests": 1166,
-    "per_run": 1.9433,
-    "over_limit_429": 783,
+    "requests": 1129,
+    "per_run": 1.8817,
+    "over_limit_429": 716,
     "during_outage": 0
    },
    "gemini": {
-    "requests": 1194,
-    "per_run": 1.99,
-    "over_limit_429": 810,
+    "requests": 1123,
+    "per_run": 1.8717,
+    "over_limit_429": 710,
     "during_outage": 0
    },
    "ai_overview": {
-    "requests": 1393,
-    "per_run": 2.3217,
-    "over_limit_429": 1136,
+    "requests": 1370,
+    "per_run": 2.2833,
+    "over_limit_429": 1093,
     "during_outage": 0
    }
   },
   "max_budget_overrun_eur": 0,
   "projects_over_budget": 0,
-  "seconds": 12.1
+  "seconds": 12.984
  }
 }

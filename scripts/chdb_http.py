@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import re
 import threading
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from chdb import session as chs
@@ -88,7 +88,8 @@ def main() -> None:
     ap.add_argument("--path", default=".data/chdb")
     a = ap.parse_args()
     SESSION = chs.Session(a.path)
-    HTTPServer(("127.0.0.1", a.port), Handler).serve_forever()
+    ThreadingHTTPServer.request_queue_size = 256  # accept bursts; queries still run one at a time
+    ThreadingHTTPServer(("127.0.0.1", a.port), Handler).serve_forever()
 
 
 if __name__ == "__main__":

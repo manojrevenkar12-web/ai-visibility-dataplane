@@ -139,7 +139,7 @@
   ],
   "reparseAfter": true
  },
- "seconds": 37.201,
+ "seconds": 37.811,
  "workerRestarts": 0,
  "timedOut": false,
  "measures": {
@@ -157,13 +157,6 @@
    "distinct_runs": 3000
   },
   "providers": {
-   "gemini": {
-    "requests": 600,
-    "per_run": 1,
-    "over_limit_429": 0,
-    "during_outage": 0,
-    "ok": 600
-   },
    "openai": {
     "requests": 600,
     "per_run": 1,
@@ -171,7 +164,14 @@
     "during_outage": 0,
     "ok": 600
    },
-   "perplexity": {
+   "gemini": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "ai_overview": {
     "requests": 600,
     "per_run": 1,
     "over_limit_429": 0,
@@ -185,7 +185,7 @@
     "during_outage": 0,
     "ok": 600
    },
-   "ai_overview": {
+   "perplexity": {
     "requests": 600,
     "per_run": 1,
     "over_limit_429": 0,
@@ -208,9 +208,9 @@
    "runs_scored": 3000
   },
   "freshness_s": {
-   "p50": 15.673,
-   "p95": 36.1466,
-   "max": 36.8465
+   "p50": 15.7366,
+   "p95": 36.3393,
+   "max": 37.1504
   },
   "webhooks": {
    "events": 3550,
