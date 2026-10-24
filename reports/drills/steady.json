@@ -1,0 +1,238 @@
+{
+ "spec": {
+  "projects": 24,
+  "promptsPerProject": 25,
+  "workers": 3,
+  "workerConcurrency": 32,
+  "hookFailRate": 0.3,
+  "settings": {
+   "limits": {
+    "queue": {
+     "lease_ms": 2000,
+     "max_attempts": 8
+    },
+    "worker": {
+     "max_inline_wait_ms": 250
+    },
+    "webhooks": {
+     "base_ms": 100,
+     "cap_ms": 2000
+    }
+   },
+   "providers": {
+    "openai": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "anthropic": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "perplexity": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "gemini": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "ai_overview": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    }
+   }
+  },
+  "timeoutMs": 240000,
+  "name": "steady",
+  "title": "A normal day",
+  "question": "With ordinary provider noise (1% errors, truncated bodies, a slow tail) and a webhook receiver that fails 30% of the time: is every run collected once, every event delivered, and how accurate is extraction?",
+  "faults": {
+   "openai": {
+    "limitPerSecond": 40,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "truncatedRate": 0.005,
+    "slowRate": 0.002
+   },
+   "anthropic": {
+    "limitPerSecond": 25,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "truncatedRate": 0.005,
+    "slowRate": 0.002
+   },
+   "perplexity": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "truncatedRate": 0.005,
+    "slowRate": 0.002
+   },
+   "gemini": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "truncatedRate": 0.005,
+    "slowRate": 0.002
+   },
+   "ai_overview": {
+    "limitPerSecond": 20,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "truncatedRate": 0.005,
+    "slowRate": 0.002
+   }
+  }
+ },
+ "seconds": 34.488,
+ "workerRestarts": 0,
+ "timedOut": false,
+ "measures": {
+  "runs": {
+   "expected": 3000,
+   "succeeded": 3000,
+   "failed": {},
+   "skipped_budget": 0,
+   "not_finished": 0
+  },
+  "analytics": {
+   "succeeded_not_in_clickhouse": 0,
+   "customer_visible_duplicates": 0,
+   "raw_rows_before_merge": 3000,
+   "distinct_runs": 3000
+  },
+  "providers": {
+   "anthropic": {
+    "requests": 614,
+    "per_run": 1.0233,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 605
+   },
+   "gemini": {
+    "requests": 609,
+    "per_run": 1.015,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 602
+   },
+   "ai_overview": {
+    "requests": 607,
+    "per_run": 1.0117,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 604
+   },
+   "perplexity": {
+    "requests": 605,
+    "per_run": 1.0083,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 605
+   },
+   "openai": {
+    "requests": 613,
+    "per_run": 1.0217,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 605
+   }
+  },
+  "cost": {
+   "provider_billed_eur": 28.409,
+   "ledger_eur": 28.413,
+   "max_budget_overrun_eur": 0,
+   "projects_over_budget": 0
+  },
+  "extraction": {
+   "mention_precision": 1,
+   "mention_recall": 0.939,
+   "position_exact": 0.8835,
+   "citation_precision": 1,
+   "citation_recall": 1,
+   "runs_scored": 3000
+  },
+  "freshness_s": {
+   "p50": 12.0136,
+   "p95": 27.1996,
+   "max": 34.1607
+  },
+  "webhooks": {
+   "events": 3000,
+   "received_unique": 3000,
+   "missing": 0,
+   "duplicate_deliveries": 0,
+   "bad_signatures": 0,
+   "failed_deliveries": 0
+  },
+  "quarantine": {
+   "open": 0,
+   "resolved": 0
+  }
+ }
+}

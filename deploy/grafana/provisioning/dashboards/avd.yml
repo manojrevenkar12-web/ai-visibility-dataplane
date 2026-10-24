@@ -1,0 +1,3 @@
+apiVersion: 1
+providers:
+  - { name: avd, folder: AI visibility data plane, type: file, options: { path: /var/lib/grafana/dashboards } }

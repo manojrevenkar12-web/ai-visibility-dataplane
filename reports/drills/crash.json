@@ -1,0 +1,278 @@
+{
+ "spec": {
+  "projects": 24,
+  "promptsPerProject": 25,
+  "workers": 3,
+  "workerConcurrency": 32,
+  "hookFailRate": 0.1,
+  "settings": {
+   "limits": {
+    "queue": {
+     "lease_ms": 2000,
+     "max_attempts": 8
+    },
+    "worker": {
+     "max_inline_wait_ms": 250
+    },
+    "webhooks": {
+     "base_ms": 100,
+     "cap_ms": 2000
+    }
+   },
+   "providers": {
+    "openai": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "anthropic": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "perplexity": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "gemini": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "ai_overview": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    }
+   }
+  },
+  "timeoutMs": 240000,
+  "name": "crash",
+  "title": "Workers die mid-run, the shipper dies mid-batch, Redis loses the queue",
+  "question": "3% of provider calls are followed by the worker process being killed before anything is recorded; 20% of ClickHouse batches are followed by a crash before they are marked shipped; at 3 s the queue's contents are lost (a Redis failover without the latest writes). Is any run lost or counted twice?",
+  "faults": {
+   "openai": {
+    "limitPerSecond": 40,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.005
+   },
+   "anthropic": {
+    "limitPerSecond": 25,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.005
+   },
+   "perplexity": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.005
+   },
+   "gemini": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.005
+   },
+   "ai_overview": {
+    "limitPerSecond": 20,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.005
+   }
+  },
+  "crashAfterCallRate": 0.03,
+  "shipperCrashRate": 0.2,
+  "dropQueueAtMs": 3000,
+  "baseline": {
+   "crashAfterCallRate": 0.03,
+   "insertRetryDuplicateRate": 0.2
+  }
+ },
+ "seconds": 240.058,
+ "workerRestarts": 97,
+ "timedOut": true,
+ "measures": {
+  "runs": {
+   "expected": 3000,
+   "succeeded": 2959,
+   "failed": {},
+   "skipped_budget": 0,
+   "not_finished": 41
+  },
+  "analytics": {
+   "succeeded_not_in_clickhouse": 2,
+   "customer_visible_duplicates": 0,
+   "raw_rows_before_merge": 2957,
+   "distinct_runs": 2957
+  },
+  "providers": {
+   "gemini": {
+    "requests": 722,
+    "per_run": 1.2033,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 713
+   },
+   "anthropic": {
+    "requests": 745,
+    "per_run": 1.2417,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 737
+   },
+   "perplexity": {
+    "requests": 734,
+    "per_run": 1.2233,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 727
+   },
+   "openai": {
+    "requests": 714,
+    "per_run": 1.19,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 711
+   },
+   "ai_overview": {
+    "requests": 708,
+    "per_run": 1.18,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 704
+   }
+  },
+  "cost": {
+   "provider_billed_eur": 33.911,
+   "ledger_eur": 28.808,
+   "max_budget_overrun_eur": 0,
+   "projects_over_budget": 0
+  },
+  "extraction": {
+   "mention_precision": 1,
+   "mention_recall": 0.9393,
+   "position_exact": 0.8834,
+   "citation_precision": 1,
+   "citation_recall": 1,
+   "runs_scored": 2957
+  },
+  "freshness_s": {
+   "p50": 26.6458,
+   "p95": 178.6586,
+   "max": 239.7487
+  },
+  "webhooks": {
+   "events": 2959,
+   "received_unique": 2959,
+   "missing": 0,
+   "duplicate_deliveries": 0,
+   "bad_signatures": 0,
+   "failed_deliveries": 0
+  },
+  "quarantine": {
+   "open": 0,
+   "resolved": 0
+  }
+ },
+ "baseline": {
+  "runs": 3000,
+  "stored_runs": 1805,
+  "lost": 54,
+  "duplicate_rows": 369,
+  "failed": 1141,
+  "skipped_budget": 0,
+  "providers": {
+   "openai": {
+    "requests": 919,
+    "per_run": 1.5317,
+    "over_limit_429": 410,
+    "during_outage": 0
+   },
+   "anthropic": {
+    "requests": 1265,
+    "per_run": 2.1083,
+    "over_limit_429": 942,
+    "during_outage": 0
+   },
+   "perplexity": {
+    "requests": 1153,
+    "per_run": 1.9217,
+    "over_limit_429": 766,
+    "during_outage": 0
+   },
+   "gemini": {
+    "requests": 1173,
+    "per_run": 1.955,
+    "over_limit_429": 787,
+    "during_outage": 0
+   },
+   "ai_overview": {
+    "requests": 1398,
+    "per_run": 2.33,
+    "over_limit_429": 1139,
+    "during_outage": 0
+   }
+  },
+  "max_budget_overrun_eur": 0,
+  "projects_over_budget": 0,
+  "seconds": 12.213
+ }
+}

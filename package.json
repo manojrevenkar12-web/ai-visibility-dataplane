@@ -1,0 +1,33 @@
+{
+  "name": "ai-visibility-dataplane",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The data plane behind AI-search visibility analytics: runs tracked prompts across flaky LLM providers under rate limits and cost ceilings, extracts brands and citations, and lands them in ClickHouse exactly once.",
+  "scripts": {
+    "api": "bun run src/cmd/api.ts",
+    "worker": "bun run src/cmd/worker.ts",
+    "scheduler": "bun run src/cmd/scheduler.ts",
+    "sim": "bun run src/cmd/sim.ts",
+    "migrate": "bun run src/cmd/migrate.ts",
+    "drill": "bun run src/cmd/drill.ts",
+    "test": "bun test --timeout 60000",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "1.10.0",
+    "@opentelemetry/exporter-trace-otlp-http": "0.300.0",
+    "@opentelemetry/resources": "3.0.0",
+    "@opentelemetry/sdk-trace": "3.0.0",
+    "@opentelemetry/semantic-conventions": "1.43.0",
+    "elysia": "1.4.30",
+    "ioredis": "6.0.0",
+    "prom-client": "15.1.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.2",
+    "@types/bun": "1.4.4",
+    "typescript": "7.0.2"
+  }
+}

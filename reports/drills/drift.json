@@ -1,0 +1,232 @@
+{
+ "spec": {
+  "projects": 24,
+  "promptsPerProject": 25,
+  "workers": 3,
+  "workerConcurrency": 32,
+  "hookFailRate": 0.1,
+  "settings": {
+   "limits": {
+    "queue": {
+     "lease_ms": 2000,
+     "max_attempts": 8
+    },
+    "worker": {
+     "max_inline_wait_ms": 250
+    },
+    "webhooks": {
+     "base_ms": 100,
+     "cap_ms": 2000
+    }
+   },
+   "providers": {
+    "openai": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "anthropic": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "perplexity": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "gemini": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "ai_overview": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    }
+   }
+  },
+  "timeoutMs": 240000,
+  "name": "drift",
+  "title": "A provider changes its response format",
+  "question": "1.5 s in, the OpenAI-style API starts returning message content as typed parts (the parser for that shape is switched off, as before the fix shipped). Are the affected answers retried and paid for again, or kept and recovered once the parser is fixed?",
+  "faults": {
+   "openai": {
+    "limitPerSecond": 40,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "driftAtMs": 1500
+   },
+   "anthropic": {
+    "limitPerSecond": 25,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "perplexity": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "gemini": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "ai_overview": {
+    "limitPerSecond": 20,
+    "latencyMs": [
+     20,
+     120
+    ]
+   }
+  },
+  "disabledParsers": [
+   "openai.chat.v2-parts"
+  ],
+  "reparseAfter": true
+ },
+ "seconds": 37.413,
+ "workerRestarts": 0,
+ "timedOut": false,
+ "measures": {
+  "runs": {
+   "expected": 3000,
+   "succeeded": 3000,
+   "failed": {},
+   "skipped_budget": 0,
+   "not_finished": 0
+  },
+  "analytics": {
+   "succeeded_not_in_clickhouse": 0,
+   "customer_visible_duplicates": 0,
+   "raw_rows_before_merge": 3000,
+   "distinct_runs": 3000
+  },
+  "providers": {
+   "gemini": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "anthropic": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "openai": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "perplexity": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "ai_overview": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   }
+  },
+  "cost": {
+   "provider_billed_eur": 28.2,
+   "ledger_eur": 28.2,
+   "max_budget_overrun_eur": 0,
+   "projects_over_budget": 0
+  },
+  "extraction": {
+   "mention_precision": 1,
+   "mention_recall": 0.9386,
+   "position_exact": 0.8793,
+   "citation_precision": 1,
+   "citation_recall": 1,
+   "runs_scored": 3000
+  },
+  "freshness_s": {
+   "p50": 15.7703,
+   "p95": 36.6494,
+   "max": 37.2723
+  },
+  "webhooks": {
+   "events": 3559,
+   "received_unique": 3559,
+   "missing": 0,
+   "duplicate_deliveries": 0,
+   "bad_signatures": 0,
+   "failed_deliveries": 0
+  },
+  "quarantine": {
+   "open": 0,
+   "resolved": 559
+  }
+ },
+ "reparse": {
+  "resolved": 559,
+  "still_unknown": 0
+ }
+}

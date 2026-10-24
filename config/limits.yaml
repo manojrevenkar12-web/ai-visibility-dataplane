@@ -1,0 +1,20 @@
+queue:
+  lease_ms: 4000            # a worker must heartbeat or finish within this, or the run is handed to another worker
+  max_attempts: 8           # attempts across all causes before a run is dead-lettered
+  high_water: 1500          # the scheduler stops enqueuing above this many ready+leased runs (backpressure)
+  max_age_ms: 21600000      # a run still not collected 6 h after it was queued is given up and reported
+                            # (deferrals for an open circuit do not spend attempts, so this is what ends them)
+worker:
+  concurrency: 48           # in-flight runs per worker process
+  max_inline_wait_ms: 250   # wait for a rate-limit token inline up to this; longer waits requeue the run
+budget:
+  reservation_ttl_ms: 30000 # a reservation from a crashed worker is released after this
+webhooks:
+  max_attempts: 15          # with the cap below, retries span roughly 10 hours
+  base_ms: 1000
+  cap_ms: 3600000
+  disable_after_consecutive_failures: 50
+  timeout_ms: 2000
+analytics:
+  batch_rows: 500
+  flush_ms: 250

@@ -1,0 +1,271 @@
+{
+ "title": "AI visibility data plane",
+ "uid": "avd-ops",
+ "schemaVersion": 39,
+ "time": {
+  "from": "now-6h",
+  "to": "now"
+ },
+ "panels": [
+  {
+   "type": "timeseries",
+   "title": "Runs finished per second, by status",
+   "gridPos": {
+    "x": 0,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ops"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (status) (rate(avd_runs_total[5m]))",
+     "legendFormat": "{{status}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Queue: ready and leased",
+   "gridPos": {
+    "x": 12,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "targets": [
+    {
+     "expr": "avd_queue_depth",
+     "legendFormat": "{{state}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Provider calls by outcome",
+   "gridPos": {
+    "x": 0,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ops"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (provider, outcome) (rate(avd_provider_requests_total[5m]))",
+     "legendFormat": "{{provider}} {{outcome}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Provider latency p95",
+   "gridPos": {
+    "x": 12,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    }
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.95, sum by (le, provider) (rate(avd_provider_latency_seconds_bucket[5m])))",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Circuit open",
+   "gridPos": {
+    "x": 0,
+    "y": 16,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "targets": [
+    {
+     "expr": "avd_circuit_open",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Retries deferred by the retry budget",
+   "gridPos": {
+    "x": 8,
+    "y": 16,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ops"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (provider) (rate(avd_retries_deferred_total[5m]))",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Rate-limit wait",
+   "gridPos": {
+    "x": 16,
+    "y": 16,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (provider) (rate(avd_rate_limit_wait_seconds_total[5m]))",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Spend per hour (EUR)",
+   "gridPos": {
+    "x": 0,
+    "y": 24,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "currencyEUR"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (provider) (increase(avd_provider_cost_eur_total[1h]))",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Scheduled to visible in ClickHouse, p95",
+   "gridPos": {
+    "x": 12,
+    "y": 24,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "s"
+    }
+   },
+   "targets": [
+    {
+     "expr": "histogram_quantile(0.95, sum by (le, provider) (rate(avd_run_seconds_bucket[15m])))",
+     "legendFormat": "{{provider}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Analytics outbox pending",
+   "gridPos": {
+    "x": 0,
+    "y": 32,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "targets": [
+    {
+     "expr": "avd_analytics_outbox_pending",
+     "legendFormat": "pending"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Webhook deliveries by outcome",
+   "gridPos": {
+    "x": 8,
+    "y": 32,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "ops"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum by (outcome) (rate(avd_webhook_deliveries_total[5m]))",
+     "legendFormat": "{{outcome}}"
+    }
+   ]
+  },
+  {
+   "type": "timeseries",
+   "title": "Schema drift, dead letters, stale acks",
+   "gridPos": {
+    "x": 16,
+    "y": 32,
+    "w": 8,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "short"
+    }
+   },
+   "targets": [
+    {
+     "expr": "sum(increase(avd_provider_schema_drift_total[15m]))",
+     "legendFormat": "drift"
+    },
+    {
+     "expr": "sum(increase(avd_dead_lettered_total[15m]))",
+     "legendFormat": "dead letters"
+    },
+    {
+     "expr": "increase(avd_queue_stale_acks_total[15m])",
+     "legendFormat": "stale acks"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,271 @@
+{
+ "spec": {
+  "projects": 24,
+  "promptsPerProject": 25,
+  "workers": 3,
+  "workerConcurrency": 32,
+  "hookFailRate": 0.1,
+  "settings": {
+   "limits": {
+    "queue": {
+     "lease_ms": 2000,
+     "max_attempts": 8
+    },
+    "worker": {
+     "max_inline_wait_ms": 250
+    },
+    "webhooks": {
+     "base_ms": 100,
+     "cap_ms": 2000
+    }
+   },
+   "providers": {
+    "openai": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "anthropic": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "perplexity": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "gemini": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "ai_overview": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    }
+   }
+  },
+  "timeoutMs": 240000,
+  "name": "limit_drop",
+  "title": "A provider lowers its rate limit without notice",
+  "question": "OpenAI's real limit drops from 40 to 12 requests per second one second in, while our configuration still says 40. How many 429s do we cause, and does work still finish?",
+  "faults": {
+   "openai": {
+    "limitPerSecond": 40,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "limitChangeAt": {
+     "atMs": 1000,
+     "perSecond": 12
+    }
+   },
+   "anthropic": {
+    "limitPerSecond": 25,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "perplexity": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "gemini": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ]
+   },
+   "ai_overview": {
+    "limitPerSecond": 20,
+    "latencyMs": [
+     20,
+     120
+    ]
+   }
+  },
+  "baseline": {}
+ },
+ "seconds": 156.227,
+ "workerRestarts": 0,
+ "timedOut": false,
+ "measures": {
+  "runs": {
+   "expected": 3000,
+   "succeeded": 3000,
+   "failed": {},
+   "skipped_budget": 0,
+   "not_finished": 0
+  },
+  "analytics": {
+   "succeeded_not_in_clickhouse": 0,
+   "customer_visible_duplicates": 0,
+   "raw_rows_before_merge": 3000,
+   "distinct_runs": 3000
+  },
+  "providers": {
+   "gemini": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "ai_overview": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "perplexity": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "openai": {
+    "requests": 838,
+    "per_run": 1.3967,
+    "over_limit_429": 238,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "anthropic": {
+    "requests": 600,
+    "per_run": 1,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   }
+  },
+  "cost": {
+   "provider_billed_eur": 28.2,
+   "ledger_eur": 28.2,
+   "max_budget_overrun_eur": 0,
+   "projects_over_budget": 0
+  },
+  "extraction": {
+   "mention_precision": 1,
+   "mention_recall": 0.9405,
+   "position_exact": 0.8813,
+   "citation_precision": 1,
+   "citation_recall": 1,
+   "runs_scored": 3000
+  },
+  "freshness_s": {
+   "p50": 14.3402,
+   "p95": 45.3422,
+   "max": 156.1011
+  },
+  "webhooks": {
+   "events": 3000,
+   "received_unique": 3000,
+   "missing": 0,
+   "duplicate_deliveries": 0,
+   "bad_signatures": 0,
+   "failed_deliveries": 0
+  },
+  "quarantine": {
+   "open": 0,
+   "resolved": 0
+  }
+ },
+ "baseline": {
+  "runs": 3000,
+  "stored_runs": 1646,
+  "lost": 0,
+  "duplicate_rows": 0,
+  "failed": 1354,
+  "skipped_budget": 0,
+  "providers": {
+   "openai": {
+    "requests": 1522,
+    "per_run": 2.5367,
+    "over_limit_429": 1313,
+    "during_outage": 0
+   },
+   "anthropic": {
+    "requests": 1238,
+    "per_run": 2.0633,
+    "over_limit_429": 895,
+    "during_outage": 0
+   },
+   "perplexity": {
+    "requests": 1122,
+    "per_run": 1.87,
+    "over_limit_429": 713,
+    "during_outage": 0
+   },
+   "gemini": {
+    "requests": 1127,
+    "per_run": 1.8783,
+    "over_limit_429": 717,
+    "during_outage": 0
+   },
+   "ai_overview": {
+    "requests": 1365,
+    "per_run": 2.275,
+    "over_limit_429": 1090,
+    "during_outage": 0
+   }
+  },
+  "max_budget_overrun_eur": 0,
+  "projects_over_budget": 0,
+  "seconds": 12.967
+ }
+}

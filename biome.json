@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 140 },
+  "linter": {
+    "rules": {
+      "recommended": true,
+      "style": { "noNonNullAssertion": "off" },
+      "suspicious": { "noExplicitAny": "error" }
+    }
+  },
+  "javascript": { "formatter": { "quoteStyle": "double", "semicolons": "always" } }
+}

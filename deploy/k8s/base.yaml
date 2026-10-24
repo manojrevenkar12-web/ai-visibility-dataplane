@@ -1,0 +1,121 @@
+# Kubernetes (GKE) manifests for the data plane. Secrets come from Secret Manager via the CSI driver
+# or External Secrets in a real cluster; here they are a plain Secret placeholder.
+apiVersion: v1
+kind: Namespace
+metadata: { name: avd }
+---
+apiVersion: v1
+kind: Secret
+metadata: { name: avd-env, namespace: avd }
+type: Opaque
+stringData:
+  DATABASE_URL: postgres://avd:CHANGE_ME@postgres:5432/avd
+  REDIS_URL: redis://redis:6379/0
+  CLICKHOUSE_URL: http://clickhouse:8123
+  PROVIDER_BASE_URL: https://providers.internal
+  API_KEYS: CHANGE_ME:*
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: api, namespace: avd, labels: { app: api } }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: api } }
+  template:
+    metadata: { labels: { app: api }, annotations: { prometheus.io/scrape: "true", prometheus.io/port: "3000" } }
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/manojrevenkar12-web/ai-visibility-dataplane:latest
+          command: ["bun", "run", "src/cmd/api.ts"]
+          envFrom: [{ secretRef: { name: avd-env } }]
+          ports: [{ containerPort: 3000 }]
+          readinessProbe: { httpGet: { path: /readyz, port: 3000 }, periodSeconds: 5 }
+          livenessProbe: { httpGet: { path: /healthz, port: 3000 }, periodSeconds: 10 }
+          resources: { requests: { cpu: 250m, memory: 256Mi }, limits: { memory: 512Mi } }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: worker, namespace: avd, labels: { app: worker } }
+spec:
+  replicas: 3
+  selector: { matchLabels: { app: worker } }
+  template:
+    metadata: { labels: { app: worker }, annotations: { prometheus.io/scrape: "true", prometheus.io/port: "9101" } }
+    spec:
+      # in-flight runs are leased: a killed pod's runs return to the queue when their lease expires,
+      # so the grace period only needs to cover one provider call
+      terminationGracePeriodSeconds: 15
+      containers:
+        - name: worker
+          image: ghcr.io/manojrevenkar12-web/ai-visibility-dataplane:latest
+          command: ["bun", "run", "src/cmd/worker.ts"]
+          envFrom: [{ secretRef: { name: avd-env } }]
+          livenessProbe: { httpGet: { path: /healthz, port: 9101 }, periodSeconds: 10 }
+          resources: { requests: { cpu: 250m, memory: 256Mi }, limits: { memory: 512Mi } }
+---
+# Workers scale on queue depth, not CPU: they mostly wait on providers.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: { name: worker, namespace: avd }
+spec:
+  scaleTargetRef: { name: worker }
+  minReplicaCount: 2
+  maxReplicaCount: 20
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://prometheus.monitoring:9090
+        query: sum(avd_queue_depth{state="ready"})
+        threshold: "300"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: scheduler, namespace: avd, labels: { app: scheduler } }
+spec:
+  replicas: 2 # one leads (fenced lock); the other takes over within the lock TTL
+  selector: { matchLabels: { app: scheduler } }
+  template:
+    metadata: { labels: { app: scheduler }, annotations: { prometheus.io/scrape: "true", prometheus.io/port: "9102" } }
+    spec:
+      containers:
+        - name: scheduler
+          image: ghcr.io/manojrevenkar12-web/ai-visibility-dataplane:latest
+          command: ["bun", "run", "src/cmd/scheduler.ts"]
+          envFrom: [{ secretRef: { name: avd-env } }]
+          resources: { requests: { cpu: 100m, memory: 128Mi }, limits: { memory: 256Mi } }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: shipper, namespace: avd, labels: { app: shipper } }
+spec:
+  replicas: 2 # both drain the outboxes with SKIP LOCKED
+  selector: { matchLabels: { app: shipper } }
+  template:
+    metadata: { labels: { app: shipper }, annotations: { prometheus.io/scrape: "true", prometheus.io/port: "9103" } }
+    spec:
+      containers:
+        - name: shipper
+          image: ghcr.io/manojrevenkar12-web/ai-visibility-dataplane:latest
+          command: ["bun", "run", "src/cmd/shipper.ts"]
+          envFrom: [{ secretRef: { name: avd-env } }]
+          resources: { requests: { cpu: 100m, memory: 128Mi }, limits: { memory: 256Mi } }
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: { name: worker, namespace: avd }
+spec: { minAvailable: 1, selector: { matchLabels: { app: worker } } }
+---
+apiVersion: batch/v1
+kind: Job
+metadata: { name: migrate, namespace: avd }
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: ghcr.io/manojrevenkar12-web/ai-visibility-dataplane:latest
+          command: ["bun", "run", "src/cmd/migrate.ts"]
+          envFrom: [{ secretRef: { name: avd-env } }]

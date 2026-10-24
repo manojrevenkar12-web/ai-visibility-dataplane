@@ -1,0 +1,65 @@
+# One entry per AI surface we collect answers from.
+# `rate` is what we allow ourselves: 90% of the provider's published or negotiated limit for our
+# account. Providers count differently from us (per-minute windows, per-organisation pools shared
+# with other keys, their clock, not ours), so we keep headroom. The simulated providers are more
+# forgiving: the drills see 0 429s at both 90% and 100% once the limiter is correct (see
+# docs/postmortems/2026-10-24-rate-limiter-truncated-waits.md). The limiter is shared by all
+# workers, so a 429 means the provider lowered the limit or we have a bug; both alert.
+# Costs are per call (an AI Overview "call" is a SERP scrape through a scraping provider);
+# providers that also bill failed calls say so, and the cost ledger follows.
+openai:
+  label: ChatGPT (Responses API, web search)
+  format: openai
+  path: /openai/v1/chat/completions
+  cost_eur: 0.012
+  rate: { per_second: 36, burst: 20 }
+  concurrency: 24
+  timeout_ms: 2500
+  retry: { max_attempts: 5, base_ms: 200, cap_ms: 8000 }
+  circuit: { window_ms: 5000, min_calls: 20, failure_rate: 0.5, cooldown_ms: 1500, probes: 3 }
+  retry_budget: { ratio: 0.2, min_per_second: 2 }
+anthropic:
+  label: Claude (Messages API, web search tool)
+  format: anthropic
+  path: /anthropic/v1/messages
+  cost_eur: 0.015
+  rate: { per_second: 22, burst: 10 }
+  concurrency: 16
+  timeout_ms: 3000
+  retry: { max_attempts: 5, base_ms: 200, cap_ms: 8000 }
+  circuit: { window_ms: 5000, min_calls: 20, failure_rate: 0.5, cooldown_ms: 1500, probes: 3 }
+  retry_budget: { ratio: 0.2, min_per_second: 2 }
+perplexity:
+  label: Perplexity (Sonar)
+  format: perplexity
+  path: /perplexity/chat/completions
+  cost_eur: 0.006
+  rate: { per_second: 27, burst: 10 }
+  concurrency: 16
+  timeout_ms: 2500
+  retry: { max_attempts: 5, base_ms: 200, cap_ms: 8000 }
+  circuit: { window_ms: 5000, min_calls: 20, failure_rate: 0.5, cooldown_ms: 1500, probes: 3 }
+  retry_budget: { ratio: 0.2, min_per_second: 2 }
+gemini:
+  label: Gemini (grounded with Google Search)
+  format: gemini
+  path: /gemini/v1beta/models/gemini:generateContent
+  cost_eur: 0.010
+  rate: { per_second: 27, burst: 10 }
+  concurrency: 16
+  timeout_ms: 2500
+  retry: { max_attempts: 5, base_ms: 200, cap_ms: 8000 }
+  circuit: { window_ms: 5000, min_calls: 20, failure_rate: 0.5, cooldown_ms: 1500, probes: 3 }
+  retry_budget: { ratio: 0.2, min_per_second: 2 }
+ai_overview:
+  label: Google AI Overview (via SERP scraping provider)
+  format: aio_html
+  path: /serp/search
+  cost_eur: 0.004
+  bills_failed_calls: true   # the scraping provider charges for 5xx too
+  rate: { per_second: 18, burst: 5 }
+  concurrency: 12
+  timeout_ms: 4000
+  retry: { max_attempts: 5, base_ms: 300, cap_ms: 10000 }
+  circuit: { window_ms: 5000, min_calls: 20, failure_rate: 0.5, cooldown_ms: 2000, probes: 3 }
+  retry_budget: { ratio: 0.2, min_per_second: 2 }

@@ -1,0 +1,9 @@
+# How a cited domain is classified for the "sources" view. Brand and competitor domains come from
+# each project's brands; this list covers the rest. Matching is on the registrable domain suffix.
+types:
+  review: [g2.com, capterra.com, trustpilot.com, getapp.com, trustradius.com, softwareadvice.com, omr.com]
+  ugc: [reddit.com, quora.com, youtube.com, stackoverflow.com, medium.com, news.ycombinator.com, linkedin.com]
+  reference: [wikipedia.org, wikidata.org]
+  editorial: [techcrunch.com, theverge.com, forbes.com, zapier.com, nytimes.com, handelsblatt.com, t3n.de, heise.de, chip.de, computerbild.de]
+# Query parameters that never identify a page.
+strip_params: [utm_source, utm_medium, utm_campaign, utm_term, utm_content, gclid, fbclid, msclkid, ref, ref_src, srsltid, mc_cid, mc_eid, igshid]

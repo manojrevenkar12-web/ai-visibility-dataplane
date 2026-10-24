@@ -1,0 +1,286 @@
+{
+ "spec": {
+  "projects": 24,
+  "promptsPerProject": 25,
+  "workers": 3,
+  "workerConcurrency": 32,
+  "hookFailRate": 0.1,
+  "settings": {
+   "limits": {
+    "queue": {
+     "lease_ms": 2000,
+     "max_attempts": 8
+    },
+    "worker": {
+     "max_inline_wait_ms": 250
+    },
+    "webhooks": {
+     "base_ms": 100,
+     "cap_ms": 2000
+    }
+   },
+   "providers": {
+    "openai": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "anthropic": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "perplexity": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "gemini": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    },
+    "ai_overview": {
+     "retry": {
+      "max_attempts": 5,
+      "base_ms": 100,
+      "cap_ms": 2000
+     },
+     "circuit": {
+      "window_ms": 3000,
+      "min_calls": 10,
+      "failure_rate": 0.5,
+      "cooldown_ms": 800,
+      "probes": 2
+     }
+    }
+   }
+  },
+  "timeoutMs": 240000,
+  "name": "outage",
+  "title": "Two providers go down",
+  "question": "Perplexity answers 503 for 4.5 s and Gemini hangs for 3 s (connections open, no answer). How much extra load do we put on providers that are down, and do runs survive the outage?",
+  "faults": {
+   "openai": {
+    "limitPerSecond": 40,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01
+   },
+   "anthropic": {
+    "limitPerSecond": 25,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01
+   },
+   "perplexity": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "outages": [
+     {
+      "fromMs": 1500,
+      "toMs": 6000,
+      "mode": "503"
+     }
+    ]
+   },
+   "gemini": {
+    "limitPerSecond": 30,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01,
+    "outages": [
+     {
+      "fromMs": 2000,
+      "toMs": 5000,
+      "mode": "hang"
+     }
+    ]
+   },
+   "ai_overview": {
+    "limitPerSecond": 20,
+    "latencyMs": [
+     20,
+     120
+    ],
+    "errorRate": 0.01
+   }
+  },
+  "baseline": {}
+ },
+ "seconds": 34.198,
+ "workerRestarts": 0,
+ "timedOut": false,
+ "measures": {
+  "runs": {
+   "expected": 3000,
+   "succeeded": 3000,
+   "failed": {},
+   "skipped_budget": 0,
+   "not_finished": 0
+  },
+  "analytics": {
+   "succeeded_not_in_clickhouse": 0,
+   "customer_visible_duplicates": 0,
+   "raw_rows_before_merge": 3000,
+   "distinct_runs": 3000
+  },
+  "providers": {
+   "ai_overview": {
+    "requests": 608,
+    "per_run": 1.0133,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "gemini": {
+    "requests": 637,
+    "per_run": 1.0617,
+    "over_limit_429": 0,
+    "during_outage": 28,
+    "ok": 600
+   },
+   "openai": {
+    "requests": 605,
+    "per_run": 1.0083,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   },
+   "perplexity": {
+    "requests": 657,
+    "per_run": 1.095,
+    "over_limit_429": 0,
+    "during_outage": 47,
+    "ok": 600
+   },
+   "anthropic": {
+    "requests": 606,
+    "per_run": 1.01,
+    "over_limit_429": 0,
+    "during_outage": 0,
+    "ok": 600
+   }
+  },
+  "cost": {
+   "provider_billed_eur": 28.232,
+   "ledger_eur": 28.512,
+   "max_budget_overrun_eur": 0,
+   "projects_over_budget": 0
+  },
+  "extraction": {
+   "mention_precision": 1,
+   "mention_recall": 0.9395,
+   "position_exact": 0.8841,
+   "citation_precision": 1,
+   "citation_recall": 1,
+   "runs_scored": 3000
+  },
+  "freshness_s": {
+   "p50": 14.9475,
+   "p95": 28.2398,
+   "max": 34.1176
+  },
+  "webhooks": {
+   "events": 3000,
+   "received_unique": 3000,
+   "missing": 0,
+   "duplicate_deliveries": 0,
+   "bad_signatures": 0,
+   "failed_deliveries": 0
+  },
+  "quarantine": {
+   "open": 0,
+   "resolved": 0
+  }
+ },
+ "baseline": {
+  "runs": 3000,
+  "stored_runs": 1941,
+  "lost": 0,
+  "duplicate_rows": 0,
+  "failed": 1059,
+  "skipped_budget": 0,
+  "providers": {
+   "openai": {
+    "requests": 758,
+    "per_run": 1.2633,
+    "over_limit_429": 190,
+    "during_outage": 0
+   },
+   "anthropic": {
+    "requests": 1171,
+    "per_run": 1.9517,
+    "over_limit_429": 796,
+    "during_outage": 0
+   },
+   "perplexity": {
+    "requests": 1232,
+    "per_run": 2.0533,
+    "over_limit_429": 507,
+    "during_outage": 384
+   },
+   "gemini": {
+    "requests": 1203,
+    "per_run": 2.005,
+    "over_limit_429": 714,
+    "during_outage": 102
+   },
+   "ai_overview": {
+    "requests": 1312,
+    "per_run": 2.1867,
+    "over_limit_429": 1012,
+    "during_outage": 0
+   }
+  },
+  "max_budget_overrun_eur": 0,
+  "projects_over_budget": 0,
+  "seconds": 14.257
+ }
+}

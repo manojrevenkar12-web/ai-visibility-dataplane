@@ -1,0 +1,37 @@
+# Alerts are on symptoms customers would notice (freshness, data not arriving) and on spend; the
+# causes (circuit open, throttling, drift) are on the dashboard and in the runbook.
+groups:
+  - name: avd
+    rules:
+      - alert: AnalyticsNotArriving
+        expr: avd_analytics_outbox_pending > 5000 or rate(avd_analytics_rows_total{table="answers"}[15m]) == 0 and sum(rate(avd_runs_total{status="succeeded"}[15m])) > 0
+        for: 10m
+        labels: { severity: page }
+        annotations: { summary: "Completed runs are not reaching ClickHouse", runbook: "docs/RUNBOOK.md#analytics-not-arriving" }
+      - alert: RunsFailingForProvider
+        expr: sum by (provider) (rate(avd_runs_total{status="failed"}[15m])) / sum by (provider) (rate(avd_runs_total[15m])) > 0.05
+        for: 15m
+        labels: { severity: page }
+        annotations: { summary: "More than 5% of {{ $labels.provider }} runs end failed", runbook: "docs/RUNBOOK.md#provider-outage" }
+      - alert: ProviderSchemaDrift
+        expr: increase(avd_provider_schema_drift_total[10m]) > 0
+        labels: { severity: page }
+        annotations: { summary: "{{ $labels.provider }} changed its response format; answers are quarantined", runbook: "docs/RUNBOOK.md#schema-drift" }
+      - alert: ThrottledByProvider
+        expr: sum by (provider) (increase(avd_provider_requests_total{outcome="throttled"}[10m])) > 20
+        labels: { severity: ticket }
+        annotations: { summary: "{{ $labels.provider }} is answering 429: its limit is lower than config/providers.yaml", runbook: "docs/RUNBOOK.md#throttled" }
+      - alert: QueueBacklogGrowing
+        expr: deriv(avd_queue_depth{state="ready"}[30m]) > 0 and avd_queue_depth{state="ready"} > 1000
+        for: 30m
+        labels: { severity: ticket }
+        annotations: { summary: "Ready runs keep growing: capacity or a provider limit is short", runbook: "docs/RUNBOOK.md#backlog" }
+      - alert: DeadLetters
+        expr: increase(avd_dead_lettered_total[1h]) > 50
+        labels: { severity: ticket }
+        annotations: { summary: "Runs are exhausting their attempts", runbook: "docs/RUNBOOK.md#dead-letters" }
+      - alert: SpendAboveForecast
+        expr: sum(increase(avd_provider_cost_eur_total[1h])) > 1.5 * sum(increase(avd_provider_cost_eur_total[1h] offset 1d))
+        for: 30m
+        labels: { severity: ticket }
+        annotations: { summary: "Provider spend is 50% above the same hour yesterday", runbook: "docs/RUNBOOK.md#spend" }
